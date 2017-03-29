@@ -11,12 +11,6 @@
 #include "gl_headers.h"
 
 /*
- * Custom global variable declarations
- */
-int scnHeight;	//Screen height
-int scnWidth;   //Screen Width
-
-/*
  * Global function decalrations
  * All functions will be defined in their respective files
  * to be updated later

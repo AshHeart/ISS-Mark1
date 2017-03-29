@@ -7,6 +7,12 @@
  */
 #include "cus_header.h"
 
+ /*
+ * Custom global variable declarations
+ */
+int scnHeight;	//Screen height
+int scnWidth;   //Screen Width
+
 int main(int argc, char **argv)
 {
 	glutInit(&argc, argv);
