@@ -29,7 +29,16 @@ void welcomeScn(void)
 	 *  Diaply all required tect on welcome screen
 	 */
 	glColor3f(1.0, 0.0, 0.0);	//Colors to be finalized later
-	dispText(-13, 0, "Welcome to the International Space Station");
+	dispText(-13, 0, "Srinivas Institute of Technology");
+	dispText(-13, 10, "Department of Computer Science and Engineering");
+
+	//all coordinates to be updated after first initial compile
+	dispText(0, 0, "Computer Graphics and Visualization");
+	dispText(0, 0, "Mini Project");
+	dispText(0, 0, "On");
+	dispText(0, 0, "3D-Environment Exploration");
+	dispText(0, 0, "The International Space Station");
+
 }
 
 void dispText(float x, float y, const char *text)
