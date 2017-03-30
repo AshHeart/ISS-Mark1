@@ -8,8 +8,8 @@
 #include "cus_header.h"
 
  /*
- * Custom global variable declarations
- */
+  * Custom global variable declarations
+  */
 int scnHeight;	//Screen height
 int scnWidth;   //Screen Width
 
@@ -23,8 +23,8 @@ int main(int argc, char **argv)
 	 */
 	scnWidth = glutGet(GLUT_SCREEN_WIDTH);
 	scnHeight = glutGet(GLUT_SCREEN_HEIGHT);
-	scnHeight /= 1.09;
-	scnWidth /= 1.005;
+	//scnHeight /= 1.09;
+	//scnWidth /= 1.005;
 
 	glutInitWindowSize(scnWidth, scnHeight);
 	glutInitWindowPosition(0, 0);
