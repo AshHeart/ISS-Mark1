@@ -18,4 +18,6 @@
 void init(void);	                           //To initialize glut
 void render(void);	                          //To render everything
 void welcomeScn(void);                       //To display the welcome landing screen
-void dispText(float, float, const char*);   //To dispay text on screen
+void overview_scn(void);					//To show an overview of the station
+void dispText(float, float, const char*);  //To dispay text on screen
+void mouse(int, int, int, int);			  //To handle mouse functions and interactions

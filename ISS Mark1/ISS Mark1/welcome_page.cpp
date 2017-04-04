@@ -6,13 +6,13 @@
  */
 #include "cus_header.h"
 
-void *font = GLUT_BITMAP_TIMES_ROMAN_24;
+void *font = GLUT_BITMAP_TIMES_ROMAN_24;	//Selected font
 
 void welcomeScn(void)
 {
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
-	glOrtho(-50, 50, -50, 50, -50, 50);	//Values for near, far to be corrected after initial compiling
+	gluOrtho2D(-50, 50, -50, 50);	//Values for x and y 
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
 
@@ -42,24 +42,43 @@ void welcomeScn(void)
 	dispText(-11.5, 3, "The International Space Station");
 
 	glColor3f(1.0, 1.0, 1.0);
-	dispText(-47, -25, "PROJECT GUIDE");
-	dispText(-47, -25, "_______________");
-	dispText(-45, -30, "Ms. Vijetha");
-	dispText(-45, -35, "ASST.PROF");
-	dispText(-45, -40, "CSE DEPT");
-	dispText(28, -25, "PROJECT COORDINATOR");
-	dispText(28, -25, "_______________________");
-	dispText(30, -30, "  Mr. Aravind Naik");
-	dispText(32, -35, "ASST.PROF");
-	dispText(32, -40, " CSE DEPT");
-	dispText(-8, -25, " TEAM MEMBERS");
-	dispText(-8, -25, " _______________");
-	dispText(-11, -30, "Ashweyth Sunil  4SN14CS022");
-	dispText(-11, -35, "Jayasooryan T M  4SN14CS048");
-	dispText(-7, -40, "CSE DEPT CS-A");
+	dispText(-47, -20, "Project Guide");
+	dispText(-47, -20, "___________");
+	dispText(-45, -25, "Ms. Vijetha");
+	dispText(-45, -30, "Asst. Prof");
+	dispText(-45, -35, "CSE Dept.");
+	dispText(28, -20, "Project Coordinator");
+	dispText(28, -20, "_______________");
+	dispText(30, -25, "  Mr. Aravind Naik");
+	dispText(32, -30, "Asst. Prof");
+	dispText(32, -35, " CSE Dept.");
+	dispText(-8, -20, " Team Members");
+	dispText(-8, -20, " ____________");
+	dispText(-11, -25, "Ashweyth Sunil  4SN14CS022");
+	dispText(-11, -30, "Jayasooryan T M  4SN14CS048");
+	dispText(-7, -35, "CSE Dept. CS-A");
 
+	/*
+	 *	Button rendering to move forward to next screen
+	 */
 	glColor3f(1.0, 1.0, 1.0);
-	dispText(-10, -48, "Press any key to continue");
+	dispText(-3, -43.5, "Continue");
+
+	glBegin(GL_POLYGON);
+		glColor3f(0.025, 0.025, 0.75);
+		glVertex2f(-6.7, -40.3);
+		glVertex2f(6.7, -40.3);
+		glVertex2f(6.7, -44.8);
+		glVertex2f(-6.7, -44.8);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+		glColor3f(1.0, 1.0, 1.0);
+		glVertex2f(-7, -40);
+		glVertex2f(7, -40);
+		glVertex2f(7, -45);
+		glVertex2f(-7, -45);
+	glEnd();
 }
 
 void dispText(float x, float y, const char *text)
