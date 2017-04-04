@@ -1,8 +1,8 @@
 /*
- *  File: cus_header.cpp
+ *  File: render.cpp
  *  Author: Seth Jennnings <ash.snaray@gmail.com>
  * 
- *  
+ *  Main rendering and initialization done here and a proceed to the welcome page
  */
 #include "cus_header.h"
 

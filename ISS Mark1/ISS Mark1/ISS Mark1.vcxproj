@@ -116,9 +116,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="cus_header.cpp" />
+    <ClCompile Include="render.cpp" />
+    <ClCompile Include="dev_mouse.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="welcpme_page.cpp" />
+    <ClCompile Include="overview_page.cpp" />
+    <ClCompile Include="welcome_page.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cus_header.h" />
