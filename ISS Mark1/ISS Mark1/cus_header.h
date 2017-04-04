@@ -21,6 +21,7 @@ void welcomeScn(void);                       //To display the welcome landing sc
 void overview_scn(void);					//To show an overview of the station
 void dispText(float, float, const char*);  //To dispay text on screen
 void mouse(int, int, int, int);			  //To handle mouse functions and interactions
+void keyboard(unsigned char, int, int);	         //To handle keyboard functions and interactions
 
 extern int scnHeight;	//Screen height
-extern int scnWidth;
+extern int scnWidth;	//Screen Width
