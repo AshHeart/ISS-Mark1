@@ -26,14 +26,13 @@ void welcomeScn(void)
 	glEnd();
 
 	/*
-	 *  Diaply all required tect on welcome screen
+	 *  Diaply all required text on welcome screen
 	 */
 	glColor3f(1.0, 1.0, 1.0);	//Colors to be finalized later
 	dispText(-13, 45, "Srinivas Institute of Technology");
 	dispText(-13, 40, "Valachil, Mangaluru- 574143");
 	dispText(-18, 35, "Department of Computer Science and Engineering");
 
-	//all coordinates to be updated after first initial compile
 	glColor3f(1.0, 1.0, 1.0);
 	dispText(-14, 20, "Computer Graphics and Visualization");
 	dispText(-6, 16, "Mini Project");
