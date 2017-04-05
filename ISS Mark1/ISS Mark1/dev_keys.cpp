@@ -13,5 +13,12 @@
  *  Global keyboard interaction and events handler
  */
 void keyboard(unsigned char key, int x, int y) {
+	/*
+	 *  If ESC is pressed give the user an option to quit out of the application from anywhere
+	 *  decision if just text is needed or a whole new window will bw experimanted on this branch
+	 */
+	if (key == 27) {
+		exit(0);
+	}
 }
 
