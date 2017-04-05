@@ -24,3 +24,8 @@ void mouse(int x, int y, int button, int state)
 		overview_scn();
 	}
 }
+
+void subMouse(int x, int y, int button, int state)
+{
+
+}

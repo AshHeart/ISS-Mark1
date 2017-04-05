@@ -13,5 +13,12 @@
  *  Global keyboard interaction and events handler
  */
 void keyboard(unsigned char key, int x, int y) {
+	if (key == 27) {
+		glutInitWindowPosition(0, 0);
+		glutInitWindowSize(350, 150);
+		glutCreateWindow("Exit?");
+
+		glutDisplayFunc(renderSub);
+	}
 }
 

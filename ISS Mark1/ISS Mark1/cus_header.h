@@ -17,10 +17,12 @@
  */
 void init(void);	                           //To initialize glut
 void render(void);	                          //To render everything
+void renderSub(void);						//To render smaller window 
 void welcomeScn(void);                       //To display the welcome landing screen
 void overview_scn(void);					//To show an overview of the station
 void dispText(float, float, const char*);  //To dispay text on screen
 void mouse(int, int, int, int);			  //To handle mouse functions and interactions
+void subMouse(int, int, int, int);		//To handle mouse functions for the sub window
 void keyboard(unsigned char, int, int);	 //To handle keyboard functions and interactions
 
 extern int scnHeight;	  //Screen height
