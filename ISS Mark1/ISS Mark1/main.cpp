@@ -1,3 +1,4 @@
+
 /*
  *	File: main.cpp
  *	Author: Seth Jennings <ash.snaray@gmail.com>
@@ -12,6 +13,7 @@
   */
 int scnHeight;	//Screen height
 int scnWidth;   //Screen Width
+int mainWindow; //Window code for creating subwindows
 
 int main(int argc, char **argv)
 {
@@ -23,8 +25,6 @@ int main(int argc, char **argv)
 	 */
 	scnWidth = glutGet(GLUT_SCREEN_WIDTH);
 	scnHeight = glutGet(GLUT_SCREEN_HEIGHT);
-	//scnHeight /= 1.09;
-	//scnWidth /= 1.005;
 
 	glutInitWindowSize(scnWidth, scnHeight);
 	glutInitWindowPosition(0, 0);
@@ -32,7 +32,9 @@ int main(int argc, char **argv)
 
 	init();
 	glutDisplayFunc(render);
+	glutFullScreenToggle();
 	glutMouseFunc(mouse);
+	glutKeyboardFunc(keyboard);
 
 	glutMainLoop();
 
