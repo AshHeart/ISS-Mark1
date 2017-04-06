@@ -75,7 +75,7 @@ void welcomeScn(void)
 	glEnd();
 
 	/*
-	*  Background rendering to go here
+	*  Background rendering done here
 	*/
 	glBegin(GL_TRIANGLES);
 		glColor3f(0.0, 0.0, 0.2);
@@ -132,10 +132,6 @@ void welcomeScn(void)
 		glColor3f(0.0, 0.0, 0.1);
 		glVertex2f(-500.0, -500.0);
 	glEnd();
-
-	
-
-
 }
 
 void dispText(float x, float y, const char *text)
