@@ -6,9 +6,6 @@
  *  as interactions on various screens
  */
 #include "cus_header.h"
-#include <iostream>
-
-using namespace std;
 
 void mouse(int x, int y, int button, int state)
 {
