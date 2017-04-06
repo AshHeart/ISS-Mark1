@@ -75,8 +75,8 @@ void welcomeScn(void)
 	glEnd();
 
 	/*
-	*  Background rendering done here
-	*/
+	 *  Background rendering code. cool gradients generated
+	 */
 	glBegin(GL_TRIANGLES);
 		glColor3f(0.0, 0.0, 0.2);
 		glVertex2f(500.0, 100.0);
