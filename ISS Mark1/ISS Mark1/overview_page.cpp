@@ -1,3 +1,10 @@
+/*
+*  File: overview_page.cpp
+*  Author: Seth Jennings <ash.snaray@gmail.com>
+*
+*  File renders a full overview of the space station, user wil be able to select any of 
+*  the available module sto enter and interact with  
+*/
 #include "cus_header.h"
 
 void overview_scn(void)

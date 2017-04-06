@@ -116,6 +116,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="dev_keys.cpp" />
     <ClCompile Include="render.cpp" />
     <ClCompile Include="dev_mouse.cpp" />
     <ClCompile Include="main.cpp" />
