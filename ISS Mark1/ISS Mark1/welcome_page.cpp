@@ -1,6 +1,7 @@
 /*
  *  File: welcome_page.cpp
  *  Author: Seth Jennings <ash.snaray@gmail.com>
+ *	        Jayasooryan TM <jayasooryantm2@gmail.com>
  *
  *  To render initial Welcome page for the application 
  */
@@ -12,19 +13,15 @@ void welcomeScn(void)
 {
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
+
 	gluOrtho2D(-500, 500, -500, 500);	//Values for top, bottom, left and right
+  
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
 
 	glClearColor(0.0, 0.0, 0.0, 1.0);
 
-	/* 
-	 *  Background rendering to go here
-	 */
-	glBegin(GL_LINES);
-		//glColor3f();
-	glEnd();
-
+	
 	/*
 	 *  Diaply all required text on welcome screen
 	 */
@@ -76,6 +73,69 @@ void welcomeScn(void)
 		glVertex2f(62, -460);
 		glVertex2f(-62, -460);
 	glEnd();
+
+	/*
+	*  Background rendering to go here
+	*/
+	glBegin(GL_TRIANGLES);
+		glColor3f(0.0, 0.0, 0.2);
+		glVertex2f(500.0, 100.0);
+		glColor3f(0.1, 0.0, 0.5);
+		glVertex2f(500.0, -500.0);
+		glColor3f(0.0, 0.0, 0.2);
+		glVertex2f(-300.0, -500.0);
+	glEnd();
+
+	glBegin(GL_TRIANGLES);
+		glColor3f(0.0, 0.1, 1.0);
+		glVertex2f(-500.0, 100.0);
+		glColor3f(0.0, 0.0, 0.2);
+		glVertex2f(-500.0, -500.0);
+		glColor3f(0.0, 0.0, 0.2);
+		glVertex2f(300.0, -500.0);
+	glEnd();
+	
+	glBegin(GL_TRIANGLES);
+		glColor3f(0.0, 0.0, 0.2);
+		glVertex2f(-300.0, -500.0);
+		glColor3f(0.0, 0.0, 0.5);
+		glVertex2f(0.0, 700.0);
+		glColor3f(0.0, 0.0, 0.2);
+		glVertex2f(300.0, -500.0);
+	glEnd();
+	
+	glBegin(GL_TRIANGLES);
+		glColor3f(0.0, 0.0, 0.2);
+		glVertex2f(-500.0, -500.0);
+		glColor3f(0.0, 0.0, 0.8);
+		glVertex2f(0.0, 800.0);
+		glColor3f(0.0, 0.0, 0.2);
+		glVertex2f(500.0, -500.0);
+	glEnd();
+
+	glBegin(GL_TRIANGLES);
+		glColor3f(0.0, 0.0, 0.2);
+		glVertex2f(-800.0, -500.0);
+		glColor3f(0.0, 0.0, 0.8);
+		glVertex2f(0.0, 1000.0);
+		glColor3f(0.0, 0.0, 0.2);
+		glVertex2f(800.0, -500.0);
+	glEnd();
+
+	glBegin(GL_QUADS);
+		glColor3f(0.0, 0.0, 0.5);
+		glVertex2f(-500.0, 500.0);
+		glColor3f(0.0, 0.0, 0.5);
+		glVertex2f(500.0, 500.0);
+		glColor3f(0.0, 0.0, 0.1);
+		glVertex2f(500.0, -500.0);
+		glColor3f(0.0, 0.0, 0.1);
+		glVertex2f(-500.0, -500.0);
+	glEnd();
+
+	
+
+
 }
 
 void dispText(float x, float y, const char *text)
