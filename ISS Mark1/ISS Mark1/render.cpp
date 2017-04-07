@@ -6,6 +6,8 @@
  */
 #include "cus_header.h"
 
+int screen = 1;
+
 void init(void)
 {
 	glClearColor(0.0, 0.0, 0.0, 1.0);
@@ -17,8 +19,14 @@ void render(void)
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glLoadIdentity();
 
-	welcomeScn();
+	switch (screen) {
+	case 1:
+		welcomeScn();
+		break;
 
-	glFlush();
+	case 2:
+		overview_scn();
+		break;
+	}
 	glutSwapBuffers();
 }

@@ -25,4 +25,4 @@ void keyboard(unsigned char, int, int);	 //To handle keyboard functions and inte
 
 extern int scnHeight;	  //Screen height
 extern int scnWidth;	 //Screen Width
-extern int mainWindow;  //Main Window
+extern int screen;		//Screen Number
