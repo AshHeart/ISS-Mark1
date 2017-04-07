@@ -20,7 +20,6 @@ void welcomeScn(void)
 	glLoadIdentity();
 
 	glClearColor(0.0, 0.0, 0.0, 1.0);
-
 	
 	/*
 	 *  Diaply all required text on welcome screen
