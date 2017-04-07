@@ -7,7 +7,7 @@
  */
 #include "cus_header.h"
 
-void mouse(int x, int y, int button, int state)
+void mouse(int button, int state, int x, int y)
 {
 	float scx, scy;
 	scx = (float(x) / float(scnWidth) - 0.5f) * 100;
@@ -17,7 +17,9 @@ void mouse(int x, int y, int button, int state)
 	 *  Initial check for the continue button on the welcpme page
 	 *  in the file welcome_page.cpp
 	 */
-	if ((scy >= -40 && scy <= -45) && (scx >= -7 && scx <= 7) && (button == GLUT_LEFT_BUTTON) && (state == GLUT_DOWN)) {
-		overview_scn();
+	if (scx >= -6 && scx <= 6 && scy <= -39 && scy >= -45) {
+		screen = 2;
 	}
+
+	glutPostRedisplay();
 }
