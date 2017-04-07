@@ -10,7 +10,11 @@
 void overview_scn(void)
 {
 	glMatrixMode(GL_PROJECTION);
+	glPushMatrix();
+	glLoadIdentity();
 	glOrtho(-150, 150, -150, 150, -150, 150);
+	glMatrixMode(GL_MODELVIEW);
+	glPushMatrix();
 	glLoadIdentity();
 
 	glClearColor(1.0, 1.0, 1.0, 1.0);
@@ -20,4 +24,8 @@ void overview_scn(void)
 	 */
 	glBegin(GL_POLYGON);
 	glEnd();
+
+	/*
+	 *  Background for this page to go here
+	 */
 }
