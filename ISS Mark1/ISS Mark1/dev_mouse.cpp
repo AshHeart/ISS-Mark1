@@ -7,6 +7,8 @@
  */
 #include "cus_header.h"
 
+int hover = 0;
+
 void mouse(int button, int state, int x, int y)
 {
 	float scx, scy;
@@ -18,8 +20,16 @@ void mouse(int button, int state, int x, int y)
 	 *  in the file welcome_page.cpp
 	 */
 	if (scx >= -6 && scx <= 6 && scy <= -39 && scy >= -45) {
-		screen = 2;
+			screen = 2;
 	}
+
+	/*
+	 *  Check for which part of the station is clicked on the overview
+	 *  in the file overview_page.cpp
+	 */
+	/*if (1) {
+		screen = 3;
+	}*/
 
 	glutPostRedisplay();
 }
