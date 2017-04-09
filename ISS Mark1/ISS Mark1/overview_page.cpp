@@ -7,23 +7,23 @@
 */
 #include "cus_header.h"
 
-void overview_scn(void)
+void overviewScn(void)
 {
 	glMatrixMode(GL_PROJECTION);
-	glPushMatrix();
 	glLoadIdentity();
-	glOrtho(-150, 150, -150, 150, -150, 150);
+	
+	glOrtho(-500, 500, -500, 500, -500, 500);
+
 	glMatrixMode(GL_MODELVIEW);
-	glPushMatrix();
 	glLoadIdentity();
 
 	glClearColor(1.0, 1.0, 1.0, 1.0);
 
+	glEnable(GL_DEPTH_TEST);
+
 	/*
 	 *  Rendering of the whole station form the outside goes here
 	 */
-	glBegin(GL_POLYGON);
-	glEnd();
 
 	/*
 	 *  Background for this page to go here
