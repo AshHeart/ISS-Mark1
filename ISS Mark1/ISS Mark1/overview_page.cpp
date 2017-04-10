@@ -20,8 +20,9 @@ void overviewScn(void)
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
 
-	glClearColor(1.0, 1.0, 1.0, 1.0);
+	glClearColor(0.0, 0.0, 0.0, 1.0);
 
+	
 	glEnable(GL_DEPTH_TEST);
 
 	/*
@@ -330,11 +331,47 @@ void overviewScn(void)
 		/*
 		*  Background for this page to go here
 		*/
+	while (i<400)
+	{
+		i++;
+		a = rand() % 600;
+		b = rand() % 600;
+		j = i % 3;
+		glPointSize(j);
+		glBegin(GL_POINTS);
+		glColor3f(1.0, 1.0, 1.0);
+		glVertex2f(a, b);
+		glEnd();
+
+		a = rand() % 600;
+		b = rand() % 600;
+		j = i % 3;
+		glPointSize(j);
+		glBegin(GL_POINTS);
+		glColor3f(1.0, 1.0, 1.0);
+		glVertex2f(-a, b);
+		glEnd();
+
+		a = rand() % 600;
+		b = rand() % 600;
+		j = i % 3;
+		glPointSize(j);
+		glBegin(GL_POINTS);
+		glColor3f(1.0, 1.0, 1.0);
+		glVertex2f(a, -b);
+		glEnd();
+
+		a = rand() % 600;
+		b = rand() % 600;
+		j = i % 3;
+		glPointSize(j);
+		glBegin(GL_POINTS);
+		glColor3f(1.0, 1.0, 1.0);
+		glVertex2f(-a, -b);
+		glEnd();
+
+	}
 
 		glColor3f(0.0, 0.0, 0.0);
 		dispText(100, 100, "Press C to continue");
-
-	/*
-	 *  Background for this page to go here
-	 */
 }
