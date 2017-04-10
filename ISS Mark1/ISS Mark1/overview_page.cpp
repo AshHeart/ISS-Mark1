@@ -210,8 +210,8 @@ void overviewScn(void)
 		glutWireCylinder(22, 30, 44, 10);
 
 		//U.S. Lab Destiny
-	//	glTranslatef(00, 0, 36);
-	//	glutWireCylinder(15, 5, 44, 30);
+		glTranslatef(00, 0, 36);
+		glutWireCylinder(15, 5, 44, 30);
 
 	glPopMatrix();
 
