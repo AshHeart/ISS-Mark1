@@ -20,5 +20,11 @@ void keyboard(unsigned char key, int x, int y) {
 	if (key == 27) {
 		exit(0);
 	}
+
+	if (key == 'c') {
+		screen = 3;
+	}
+
+	glutPostRedisplay();
 }
 
