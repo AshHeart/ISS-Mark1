@@ -20,7 +20,6 @@ void welcomeScn(void)
 	glLoadIdentity();
 
 	glClearColor(0.0, 0.0, 0.0, 1.0);
-
 	
 	/*
 	 *  Diaply all required text on welcome screen
@@ -75,8 +74,8 @@ void welcomeScn(void)
 	glEnd();
 
 	/*
-	*  Background rendering to go here
-	*/
+	 *  Background rendering code. cool gradients generated
+	 */
 	glBegin(GL_TRIANGLES);
 		glColor3f(0.0, 0.0, 0.2);
 		glVertex2f(500.0, 100.0);
@@ -132,10 +131,6 @@ void welcomeScn(void)
 		glColor3f(0.0, 0.0, 0.1);
 		glVertex2f(-500.0, -500.0);
 	glEnd();
-
-	
-
-
 }
 
 void dispText(float x, float y, const char *text)

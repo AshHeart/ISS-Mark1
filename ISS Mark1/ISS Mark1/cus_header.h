@@ -15,14 +15,20 @@
  * All functions will be defined in their respective files
  * to be updated later
  */
-void init(void);	                           //To initialize glut
-void render(void);	                          //To render everything
+void init(void);	                            //To initialize glut
+void render(void);	                           //To render everything
+void reshape(int, int);					      //To handle resizing of the window
 void welcomeScn(void);                       //To display the welcome landing screen
-void overview_scn(void);					//To show an overview of the station
+void overviewScn(void);					    //To show an overview of the station
+void selectScn(void);					//To show module details
 void dispText(float, float, const char*);  //To dispay text on screen
 void mouse(int, int, int, int);			  //To handle mouse functions and interactions
 void keyboard(unsigned char, int, int);	 //To handle keyboard functions and interactions
 
+/*
+ *  External variables declarations to be 
+ *  used in other files
+ */
 extern int scnHeight;	  //Screen height
 extern int scnWidth;	 //Screen Width
-extern int mainWindow;  //Main Window
+extern int screen;		//Screen Number

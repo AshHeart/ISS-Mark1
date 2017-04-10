@@ -1,4 +1,3 @@
-
 /*
  *	File: main.cpp
  *	Author: Seth Jennings <ash.snaray@gmail.com>
@@ -32,6 +31,7 @@ int main(int argc, char **argv)
 
 	init();
 	glutDisplayFunc(render);
+	glutReshapeFunc(reshape);
 	glutFullScreenToggle();
 	glutMouseFunc(mouse);
 	glutKeyboardFunc(keyboard);
