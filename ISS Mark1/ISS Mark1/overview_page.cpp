@@ -328,11 +328,10 @@ void overviewScn(void)
 		glVertex3f(350, -435, 50);
 	glEnd();
 
-		/*
-		*  Background for this page to go here
-		*/
-	while (i<400)
-	{
+	/*
+	 *  Background for this page to go here
+	 */
+	while (i<400) {
 		i++;
 		a = rand() % 600;
 		b = rand() % 600;
@@ -372,6 +371,6 @@ void overviewScn(void)
 
 	}
 
-		glColor3f(0.0, 0.0, 0.0);
-		dispText(100, 100, "Press C to continue");
+	glColor3f(1.0, 1.0, 1.0);
+	dispText(100, 100, "Press C to continue");
 }
