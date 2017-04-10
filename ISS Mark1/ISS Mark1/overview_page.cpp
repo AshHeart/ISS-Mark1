@@ -9,15 +9,18 @@
 
 void overviewScn(void)
 {
+	GLfloat a, b;
+	int i=0,j;
+
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
-	
+
 	glOrtho(-500, 500, -500, 500, -500, 500);
 
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
 
-	glClearColor(1.0, 1.0, 1.0, 1.0);
+	glClearColor(0.01, 0.0, 0.1, 1.0);
 
 	glEnable(GL_DEPTH_TEST);
 
@@ -25,7 +28,49 @@ void overviewScn(void)
 	 *  Rendering of the whole station form the outside goes here
 	 */
 
-	/*
-	 *  Background for this page to go here
-	 */
+	 /*
+	  *  Background for this page to go here
+	  */
+
+	while (i < 1000)
+	{
+		j = i % 3;
+
+		a = rand() % 500;
+		b = rand() % 500;
+		glPointSize(j);
+		glBegin(GL_POINTS);
+		glColor3f(1, 1, 1);
+		glVertex2f(a, b);
+		glEnd();
+		glFlush();
+
+		a = rand() % 500;
+		b = rand() % 500;
+		glPointSize(j);
+		glBegin(GL_POINTS);
+		glColor3f(1, 1, 1);
+		glVertex2f(-a, -b);
+		glEnd();
+		glFlush();
+
+		a = rand() % 500;
+		b = rand() % 500;
+		glPointSize(j);
+		glBegin(GL_POINTS);
+		glColor3f(1, 1, 1);
+		glVertex2f(-a, b);
+		glEnd();
+		glFlush();
+
+		a = rand() % 500;
+		b = rand() % 500;
+		glPointSize(j);
+		glBegin(GL_POINTS);
+		glColor3f(1, 1, 1);
+		glVertex2f(a, -b);
+		glEnd();
+		glFlush();
+		i++;
+	}
 }
