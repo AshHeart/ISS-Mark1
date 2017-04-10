@@ -216,6 +216,123 @@ void overviewScn(void)
 		//U.S. Lab Destiny
 		glTranslatef(00, 0, 36);
 		glutWireCylinder(15, 5, 44, 30);
+	glPopMatrix();
+
+	//Main Holding truss unit center
+	glPushMatrix();
+		glColor3f(0.55, 0.55, 0.55);
+		glTranslatef(-143, -107, -100);
+		glRotatef(90, 0.0, 1.0, 0.0);
+		glutSolidCylinder(20, 50, 5, 10);
+	glPopMatrix();
+
+	//Main Holding truss unit right
+	glPushMatrix();
+		glColor3f(0.55, 0.55, 0.55);
+		glTranslatef(-123, -107, -100);
+		glRotatef(90, 0.0, 1.0, 0.0);
+		glutSolidCylinder(20, 50, 5, 10);
+	glPopMatrix();
+
+	//Solar Array truss to main truss connector
+	glPushMatrix();
+		glColor3f(0.6, 0.6, 0.6);
+		glTranslatef(-61, -107, -100);
+		glRotatef(-20, 1.0, 0.0, 0.0);
+		glutWireCube(22);
+	glPopMatrix();
+
+	//Right Array left to Truss connector
+	glPushMatrix();
+		glColor3f(0.6, 0.6, 0.6);
+		glTranslatef(-40, -107, -100);
+		glRotatef(-20, 1.0, 0.0, 0.0);
+		glutSolidCube(20);
+	glPopMatrix();
+
+	//Right Array right to Truss connector
+	glPushMatrix();
+		glColor3f(0.6, 0.6, 0.6);
+		glTranslatef(-20, -107, -100);
+		glRotatef(-20, 1.0, 0.0, 0.0);
+		glutSolidCube(20);
+	glPopMatrix();
+
+	glPushMatrix();
+		glColor3f(0.6, 0.6, 0.6);
+		glTranslatef(0, -107, -100);
+		glRotatef(-20, 1.0, 0.0, 0.0);
+		glutWireCube(20);
+	glPopMatrix();
+
+	glPushMatrix();
+		glColor3f(0.6, 0.6, 0.6);
+		glTranslatef(20, -107, -100);
+		glRotatef(-20, 1.0, 0.0, 0.0);
+		glutSolidCube(20);
+	glPopMatrix();
+
+	glPushMatrix();
+		glColor3f(0.6, 0.6, 0.6);
+		glTranslatef(40, -107, -100);
+		glRotatef(-20, 1.0, 0.0, 0.0);
+		glutSolidCube(20);
+	glPopMatrix();
+
+	//Solar Arrays upper-right bank
+	glBegin(GL_QUADS);
+		glColor3f(0.0, 0.0, 1.0);
+		glVertex3f(275, 200, -100);
+		glVertex3f(250, 200, -100);
+		glVertex3f(250, -100, 50);
+		glVertex3f(275, -100, 50);
+
+		glVertex3f(280, 200, -100);
+		glVertex3f(305, 200, -100);
+		glVertex3f(305, -100, 50);
+		glVertex3f(280, -100, 50);
+
+		glVertex3f(320, 200, -100);
+		glVertex3f(345, 200, -100);
+		glVertex3f(345, -100, 50);
+		glVertex3f(320, -100, 50);
+
+		glVertex3f(350, 200, -100);
+		glVertex3f(375, 200, -100);
+		glVertex3f(375, -100, 50);
+		glVertex3f(350, -100, 50);
+	glEnd();
+
+	//Solar Arrays lower-right bank
+	glBegin(GL_QUADS);
+		glColor3f(0.0, 0.0, 1.0);
+		glVertex3f(275, -135, -100);
+		glVertex3f(250, -135, -100);
+		glVertex3f(250, -435, 50);
+		glVertex3f(275, -435, 50);
+
+		glVertex3f(280, -135, -100);
+		glVertex3f(305, -135, -100);
+		glVertex3f(305, -435, 50);
+		glVertex3f(280, -435, 50);
+
+		glVertex3f(320, -135, -100);
+		glVertex3f(345, -135, -100);
+		glVertex3f(345, -435, 50);
+		glVertex3f(320, -435, 50);
+
+		glVertex3f(350, -135, -100);
+		glVertex3f(375, -135, -100);
+		glVertex3f(375, -435, 50);
+		glVertex3f(350, -435, 50);
+	glEnd();
+
+		/*
+		*  Background for this page to go here
+		*/
+
+		glColor3f(0.0, 0.0, 0.0);
+		dispText(100, 100, "Press C to continue");
 
 	/*
 	 *  Background for this page to go here
