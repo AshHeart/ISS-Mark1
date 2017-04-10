@@ -30,7 +30,7 @@ void render(void)
 		break;
 
 	case 3:
-		//selectScn();
+		selectScn();
 		break;
 	}
 	glutSwapBuffers();
@@ -38,7 +38,7 @@ void render(void)
 
 void reshape(int w, int h)
 {
-	if (screen == 0) {
+	if (screen == 1) {
 		scnWidth = w;
 		scnHeight = h;
 		glViewport(0, 0, w, h);
@@ -46,7 +46,7 @@ void reshape(int w, int h)
 		glMatrixMode(GL_PROJECTION);	//Projection Matrix
 		glLoadIdentity();
 
-		glOrtho(-50, 50, -50, 50, -50, 50);	//left, right, bottom, top, near, far
+		glOrtho(-500, 500, -500, 500, -500, 500);	//left, right, bottom, top, near, far
 
 		glMatrixMode(GL_MODELVIEW);		//Modelview Matrix
 		glLoadIdentity();
