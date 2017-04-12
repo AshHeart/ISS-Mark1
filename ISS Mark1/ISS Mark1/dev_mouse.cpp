@@ -7,8 +7,6 @@
  */
 #include "cus_header.h"
 
-int hover = 0;
-
 void mouse(int button, int state, int x, int y)
 {
 	float scx, scy;
@@ -20,6 +18,7 @@ void mouse(int button, int state, int x, int y)
 	 *  in the file welcome_page.cpp
 	 */
 	if (scx >= -6 && scx <= 6 && scy <= -39 && scy >= -45) {
+		if(screen == 1)
 			screen = 2;
 	}
 
