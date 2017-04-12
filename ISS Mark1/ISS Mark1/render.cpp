@@ -30,7 +30,7 @@ void render(void)
 		break;
 
 	case 3:
-		selectScn();
+		renderScn();
 		break;
 	}
 	glutSwapBuffers();
@@ -60,7 +60,7 @@ void reshape(int w, int h)
 		glMatrixMode(GL_PROJECTION);	//Projection Matrix
 		glLoadIdentity();
 
-		gluPerspective(45.0f, (float)w / (float)h, 0.1, 100.0);
+		gluPerspective(45.0f, (float)scnWidth / (float)scnHeight, 0.1, 100.0);
 
 		glMatrixMode(GL_MODELVIEW);		//Modelview Matrix
 		glLoadIdentity();

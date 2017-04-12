@@ -1,9 +1,9 @@
 /*
-*  File: overview_page.cpp
-*  Author: Seth Jennings <ash.snaray@gmail.com>
-*
-*  File renders a full overview of the space station, user wil be able to select any of 
-*  the available module sto enter and floateract with  
+ *  File: overview_page.cpp
+ *  Author: Seth Jennings <ash.snaray@gmail.com>
+ *
+ *  File renders a full overview of the space station, user wil be able to select any of 
+ *  the available module sto enter and floateract with  
 */
 #include "cus_header.h"
 
@@ -22,7 +22,6 @@ void overviewScn(void)
 
 	glClearColor(0.0, 0.0, 0.0, 1.0);
 
-	
 	glEnable(GL_DEPTH_TEST);
 
 	/*
@@ -201,7 +200,7 @@ void overviewScn(void)
 		glColor3f(0.55, 0.55, 0.55);
 		glTranslatef(-237, -107, -100);
 		glRotatef(90, 0.0, 1.0, 0.0);
-		glutSolidCylinder(20, 50, 5, 10);
+		glutWireCylinder(20, 50, 5, 10);
 	glPopMatrix();
 
 	//Living space, nodes, labs
@@ -209,14 +208,14 @@ void overviewScn(void)
 		glColor3f(0.65, 0.65, 0.65);
 
 		//Node 1 Unity
-		glColor3f(1.0, 0.0, 0.0);
+		glColor3f(1.0, 0.65, 0.65);
 		glTranslatef(-163, -107, -100);
-		glRotatef(90, -165.0, -107.0, 0.0);
+		//glRotatef(90, 0.0, 0.0, 0.0);
 		glutWireCylinder(22, 30, 44, 10);
 
 		//U.S. Lab Destiny
-		glTranslatef(00, 0, 36);
-		glutWireCylinder(15, 5, 44, 30);
+		//glTranslatef(00, 0, 36);
+		//glutSolidCylinder(22, 50, 44, 30);
 	glPopMatrix();
 
 	//Main Holding truss unit center
@@ -339,7 +338,7 @@ void overviewScn(void)
 		glPointSize(j);
 		glBegin(GL_POINTS);
 		glColor3f(1.0, 1.0, 1.0);
-		glVertex2f(a, b);
+		glVertex3f(a, b, -50);
 		glEnd();
 
 		a = rand() % 600;
@@ -348,7 +347,7 @@ void overviewScn(void)
 		glPointSize(j);
 		glBegin(GL_POINTS);
 		glColor3f(1.0, 1.0, 1.0);
-		glVertex2f(-a, b);
+		glVertex3f(-a, b, -50);
 		glEnd();
 
 		a = rand() % 600;
@@ -357,7 +356,7 @@ void overviewScn(void)
 		glPointSize(j);
 		glBegin(GL_POINTS);
 		glColor3f(1.0, 1.0, 1.0);
-		glVertex2f(a, -b);
+		glVertex3f(a, -b, -50);
 		glEnd();
 
 		a = rand() % 600;
@@ -366,11 +365,11 @@ void overviewScn(void)
 		glPointSize(j);
 		glBegin(GL_POINTS);
 		glColor3f(1.0, 1.0, 1.0);
-		glVertex2f(-a, -b);
+		glVertex3f(-a, -b, -50);
 		glEnd();
-
 	}
 
+	//Remove once click to render is implemented on overview
 	glColor3f(1.0, 1.0, 1.0);
 	dispText(100, 100, "Press C to continue");
 }

@@ -121,7 +121,7 @@
     <ClCompile Include="dev_mouse.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="overview_page.cpp" />
-    <ClCompile Include="select_page.cpp" />
+    <ClCompile Include="render_modules.cpp" />
     <ClCompile Include="welcome_page.cpp" />
   </ItemGroup>
   <ItemGroup>
