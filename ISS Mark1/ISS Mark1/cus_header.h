@@ -15,12 +15,12 @@
  * All functions will be defined in their respective files
  * to be updated later
  */
-void init(void);	                            //To initialize glut
-void render(void);	                           //To render everything
-void reshape(int, int);					      //To handle resizing of the window
-void welcomeScn(void);                       //To display the welcome landing screen
-void overviewScn(void);					    //To show an overview of the station
-void selectScn(void);					//To show module details
+void init(void);	                             //To initialize glut
+void render(void);	                            //To render everything
+void reshape(int, int);					       //To handle resizing of the window
+void welcomeScn(void);                        //To display the welcome landing screen
+void overviewScn(void);					     //To show an overview of the station
+void renderScn(void);						//To render all the main modules' inner views
 void dispText(float, float, const char*);  //To dispay text on screen
 void mouse(int, int, int, int);			  //To handle mouse functions and interactions
 void keyboard(unsigned char, int, int);	 //To handle keyboard functions and interactions
