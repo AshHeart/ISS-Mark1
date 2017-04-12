@@ -21,8 +21,8 @@ void keyboard(unsigned char key, int x, int y) {
 		exit(0);
 	}
 
-	if (key == 'c') {
-		screen = 3;
+	if (key == 'c' && screen == 2) {
+			screen = 3;
 	}
 
 	glutPostRedisplay();
