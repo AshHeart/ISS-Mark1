@@ -32,3 +32,6 @@ void keyboard(unsigned char, int, int);	 //To handle keyboard functions and inte
 extern int scnHeight;	  //Screen height
 extern int scnWidth;	 //Screen Width
 extern int screen;		//Screen Number
+extern GLint view[3];	//To handle rotation
+extern GLint axis;		//For selecting one of three axis
+extern GLfloat theta[3]; //To rotate in one of three axis
