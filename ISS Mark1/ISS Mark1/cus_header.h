@@ -37,3 +37,4 @@ extern int screen;		//Screen Number
 extern GLint view[3];	//To handle rotation
 extern GLint axis;		//For selecting one of three axis
 extern GLfloat theta[3]; //To rotate in one of three axis
+extern void *font;		//Font used
