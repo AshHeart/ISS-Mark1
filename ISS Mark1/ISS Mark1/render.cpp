@@ -32,7 +32,12 @@ void render(void)
 	case 3:
 		showDetails();
 		break;
+
+	case 4:
+		renderScn();
+		break;
 	}
+
 	glutSwapBuffers();
 }
 

@@ -7,7 +7,7 @@
  */
 #include "cus_header.h"
 
-void drawUnity(void);
+void drawDestiny(void);
 
 void renderScn(void)
 {
@@ -26,10 +26,10 @@ void renderScn(void)
 	/*
 	 *  Just render node 1 Unity for now
 	 */
-	drawUnity();
+	drawDestiny();
 }
 
-void drawUnity()
+void drawDestiny()
 {
 	//Facing wall
 	glBegin(GL_POLYGON);
