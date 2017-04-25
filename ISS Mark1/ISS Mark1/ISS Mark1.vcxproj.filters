@@ -36,6 +36,9 @@
     <ClCompile Include="render_modules.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="render_details.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="gl_headers.h">

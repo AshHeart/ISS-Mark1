@@ -11,7 +11,7 @@ void overviewScn(void)
 {
 	GLUquadric *ITS, *ITS2, *Labs, *arr;
 	GLfloat a, b;
-	GLint i=0, j;
+  GLint i=0,j;
 
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
@@ -22,8 +22,6 @@ void overviewScn(void)
 	glLoadIdentity();
 
 	glClearColor(0.0, 0.0, 0.0, 1.0);
-
-	glEnable(GL_DEPTH_TEST);
 
 	/*
 	 *  Rendering of the whole station form the outside goes here
