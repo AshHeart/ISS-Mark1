@@ -14,7 +14,6 @@ void renderScn(void)
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 
-	//glOrtho(-500, 500, -500, 500, -500, 500);
 	gluPerspective(120.0f, (GLfloat)scnWidth / (GLfloat)scnHeight, 1, 500.0);
 
 	glMatrixMode(GL_MODELVIEW);

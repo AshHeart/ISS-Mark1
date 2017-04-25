@@ -21,9 +21,11 @@ void reshape(int, int);					       //To handle resizing of the window
 void welcomeScn(void);                        //To display the welcome landing screen
 void overviewScn(void);					     //To show an overview of the station
 void renderScn(void);						//To render all the main modules' inner views
-void dispText(float, float, const char*);  //To dispay text on screen
+void dispText(GLfloat, GLfloat, const char*);  //To dispay text on screen
+void dispText3D(GLfloat, GLfloat, GLfloat, const char *);
 void mouse(int, int, int, int);			  //To handle mouse functions and interactions
 void keyboard(unsigned char, int, int);	 //To handle keyboard functions and interactions
+void showDetails(void);
 
 /*
  *  External variables declarations to be 

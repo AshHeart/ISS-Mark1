@@ -4,13 +4,13 @@
  *
  *  File renders a full overview of the space station, user wil be able to select any of 
  *  the available module sto enter and floateract with  
-*/
+ */
 #include "cus_header.h"
 
 void overviewScn(void)
 {
 	GLfloat a, b;
-	int i=0,j;
+	GLint i=0,j;
 
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
@@ -21,8 +21,6 @@ void overviewScn(void)
 	glLoadIdentity();
 
 	glClearColor(0.0, 0.0, 0.0, 1.0);
-
-	glEnable(GL_DEPTH_TEST);
 
 	/*
 	 *  Rendering of the whole station form the outside goes here
