@@ -11,7 +11,7 @@ void overviewScn(void)
 {
 	GLUquadric *ITS, *ITS2, *Labs, *arr;
 	GLfloat a, b;
-  GLint i=0,j;
+    GLint i=0,j;
 
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
@@ -53,7 +53,7 @@ void overviewScn(void)
 		gluQuadricDrawStyle(ITS2, GLU_LINE);
 
 		Labs = gluNewQuadric();
-		gluQuadricDrawStyle(Labs, GLU_LINE);
+		gluQuadricDrawStyle(Labs, GLU_FILL);
 
 		arr = gluNewQuadric();
 		gluQuadricDrawStyle(arr, GLU_FILL);
