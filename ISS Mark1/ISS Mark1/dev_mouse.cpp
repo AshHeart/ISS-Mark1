@@ -6,6 +6,7 @@
  *  as interactions on various screens
  */
 #include "cus_header.h"
+#include <iostream>
 
 void mouse(int button, int state, int x, int y)
 {
@@ -29,6 +30,14 @@ void mouse(int button, int state, int x, int y)
 	/*if (1) {
 		screen = 3;
 	}*/
+
+	/*
+	 *   To enter the selected module
+	 */
+	if(scx >= 16.0 && scx <= 29.0 && scy <= -32.8 && scy >= -40.9) {
+		if (screen == 3)
+			screen = 4;
+	}
 
 	glutPostRedisplay();
 }

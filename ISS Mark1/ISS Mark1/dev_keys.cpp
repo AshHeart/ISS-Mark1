@@ -29,7 +29,7 @@ void keyboard(unsigned char key, int x, int y) {
 			screen = 3;
 	}
 
-	if (screen == 2) {
+	if (screen == 2 || screen == 3) {
 		if (key == 'w')	view[1] += 1;	  //y view
 		if (key == 'a') view[0] += 1;	 //x view
 		if (key == 'j')	view[2] += 1;	//z view
