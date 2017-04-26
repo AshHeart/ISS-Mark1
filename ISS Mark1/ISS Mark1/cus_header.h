@@ -24,7 +24,9 @@ void renderScn(void);						//To render all the main modules' inner views
 void dispText(GLfloat, GLfloat, const char*);  //To dispay text on screen
 void dispText3D(GLfloat, GLfloat, GLfloat, const char *);
 void mouse(int, int, int, int);			  //To handle mouse functions and interactions
+void moveMouse(int, int);				//To register mouse movement
 void keyboard(unsigned char, int, int);	 //To handle keyboard functions and interactions
+void cameraControl();					//To handle idle and active camera
 void showDetails(void);
 
 /*
@@ -38,3 +40,5 @@ extern GLint view[3];	//To handle rotation
 extern GLint axis;		//For selecting one of three axis
 extern GLfloat theta[3]; //To rotate in one of three axis
 extern void *font;		//Font used
+extern float camLrRot;	//Camera x rotation
+extern float camUdRot;  //Camera y rotation
