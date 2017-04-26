@@ -39,6 +39,9 @@
     <ClCompile Include="render_details.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="dev_camera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="gl_headers.h">
