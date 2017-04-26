@@ -34,6 +34,7 @@ int main(int argc, char **argv)
 	glutReshapeFunc(reshape);
 	glutFullScreenToggle();
 	glutMouseFunc(mouse);
+	glutPassiveMotionFunc(moveMouse);
 	glutKeyboardFunc(keyboard);
 
 	glutMainLoop();
