@@ -19,11 +19,11 @@ void renderScn(void)
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
 
-	glClearColor(1.0, 1.0, 1.0, 1.0);
-
 	glEnable(GL_DEPTH_TEST);
 
-	gluLookAt(view[0], view[1], view[2], 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
+	glTranslatef(view[0], view[1], view[2]);
+
+	cameraControl();
 
 	/*
 	 *  Just render node 1 Unity for now

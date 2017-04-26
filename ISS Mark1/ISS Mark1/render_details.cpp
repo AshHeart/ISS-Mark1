@@ -13,9 +13,6 @@ void renderColumbus();
 
 void showDetails(void)
 {
-
-	glClearColor(1.0, 1.0, 1.0, 1.0);
-
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 
@@ -148,11 +145,13 @@ void showDetails(void)
 
 void renderDestiny()
 {
-	gluLookAt(view[0], view[1], view[2], 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
 
 	glPushMatrix();
+		glTranslatef(view[0], view[1], view[2]);
+		cameraControl();
+
 		obj = gluNewQuadric();
-		gluQuadricDrawStyle(obj, GLU_LINE);
+		gluQuadricDrawStyle(obj, GLU_FILL);
 
 		glColor3f(1.0, 0.95, 0.95);
 		glRotatef(90, 0.0, 1.0, 0.0);
