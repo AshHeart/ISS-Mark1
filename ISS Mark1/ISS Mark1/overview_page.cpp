@@ -12,6 +12,7 @@ void overviewScn(void)
 	GLUquadric *ITS, *ITS2, *Labs, *arr;
 	GLfloat a, b;
     GLint i=0,j;
+	GLfloat ambLight[] = { 0.65, 0.65, 0.65, 0.0 };
 
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
@@ -22,6 +23,15 @@ void overviewScn(void)
 	glLoadIdentity();
 
 	glClearColor(0.0, 0.0, 0.0, 1.0);
+
+	glEnable(GL_LIGHTING);
+	glEnable(GL_COLOR_MATERIAL);
+
+	glLightModelfv(GL_LIGHT_MODEL_AMBIENT, ambLight);
+	glColorMaterial(GL_FRONT, GL_AMBIENT_AND_DIFFUSE);
+
+	glLightf(GL_LIGHT0, GL_AMBIENT, *ambLight);
+	glEnable(GL_LIGHT0);
 
 	/*
 	 *  Rendering of the whole station form the outside goes here
@@ -40,7 +50,7 @@ void overviewScn(void)
 	 *
 	 *	Example: P6 ITS- Integrated Truss Segment Port side 6
 	 */
-	gluLookAt(view[0], view[1], view[2], 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
+	glTranslatef(view[0], view[1], view[2]);
 	glRotatef(theta[0], 1.0, 0.0, 0.0);
 	glRotatef(theta[1], 0.0, 1.0, 0.0);
 	glRotatef(theta[2], 0.0, 0.0, 1.0);
@@ -442,4 +452,7 @@ void overviewScn(void)
 	//Remove once click to render is implemented on overview
 	glColor3f(1.0, 1.0, 1.0);
 	dispText(10, 10, "Press C to continue");
+
+	glDisable(GL_LIGHT0);
+	glDisable(GL_LIGHTING);
 }
