@@ -8,9 +8,15 @@
 #include "cus_header.h"
 #include <iostream>
 
+float scx, scy;	      //Screen values
+float globx, globy;  //Global values
+float lastx = 0, lasty = 0, lastz = 0;		//Last x, y and z values
+float diffx, diffy, diffz;			//Difference of x, y and zvalues
+float camLrRot, camUdRot;		//Camera rotation Left Right Up Down
+float rotSpeed = 0.5;			//Rotation speed is .5x
+
 void mouse(int button, int state, int x, int y)
 {
-	float scx, scy;
 	scx = (float(x) / float(scnWidth) - 0.5f) * 100;
 	scy = -(float(y) / float(scnHeight) - 0.5f) * 100;
 
@@ -39,5 +45,30 @@ void mouse(int button, int state, int x, int y)
 			screen = 4;
 	}
 
+	glutPostRedisplay();
+}
+
+void moveMouse(int x, int y)
+{
+	/*
+     *	To register movemet	in module details page
+	 */
+	if (screen == 3 || screen == 4) {
+		//Calculate differences in x and y values
+		diffx = lastx - x;
+		diffy = y - lasty;
+
+		//Save new values
+		lastx = x;
+		lasty = y;
+
+		camLrRot += diffx * rotSpeed;
+		camUdRot += diffy * rotSpeed;
+	}
+	else if (screen == 4) {
+		//Calculate difference in x, y and z values
+
+		//Save new values
+	}
 	glutPostRedisplay();
 }
