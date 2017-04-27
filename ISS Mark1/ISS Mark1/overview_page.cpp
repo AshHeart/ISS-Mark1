@@ -44,7 +44,7 @@ void overviewScn(void)
 	 *
 	 *	Example: P6 ITS- Integrated Truss Segment Port side 6
 	 */
-	gluLookAt(view[0], view[1], view[2], 0.0, 0.0, 0.0, 1.0, 1.0, 0.0);
+	gluLookAt(view[0], view[1], view[2], 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
 	glRotatef(theta[0], 1.0, 0.0, 0.0);
 	glRotatef(theta[1], 0.0, 1.0, 0.0);
 	glRotatef(theta[2], 0.0, 0.0, 1.0);
@@ -201,7 +201,7 @@ void overviewScn(void)
 	/*
 	 *  Background for this page to go here
 	 */
-	while (i<400) {
+	while (i<500) {
 		i++;
 		a = rand() % 600;
 		b = rand() % 600;
