@@ -1,338 +1,416 @@
 /*
-*  File: overview_page.cpp
-*  Author: Seth Jennings <ash.snaray@gmail.com>
-*
-*  File renders a full overview of the space station, user wil be able to select any of 
-*  the available module sto enter and floateract with  
-*/
+ *  File: overview_page.cpp
+ *  Author: Seth Jennings <ash.snaray@gmail.com>
+ *
+ *  File renders a full overview of the space station, user wil be able to select any of 
+ *  the available modules to enter and floateract with  
+ */
 #include "cus_header.h"
 
 void overviewScn(void)
 {
+	GLUquadric *ITS, *ITS2, *Labs, *arr;
 	GLfloat a, b;
-	int i=0,j;
+    GLint i=0,j;
+	GLfloat ambLight[] = { 0.65, 0.65, 0.65, 0.0 };
 
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 
-	glOrtho(-500, 500, -500, 500, -500, 500);
+	gluPerspective(60.0f, (GLdouble)(scnWidth / scnHeight), 1.0, 500.0);
 
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
 
 	glClearColor(0.0, 0.0, 0.0, 1.0);
 
-	
-	glEnable(GL_DEPTH_TEST);
+	glEnable(GL_LIGHTING);
+	glEnable(GL_COLOR_MATERIAL);
+
+	glLightModelfv(GL_LIGHT_MODEL_AMBIENT, ambLight);
+	glColorMaterial(GL_FRONT, GL_AMBIENT_AND_DIFFUSE);
+
+	glLightf(GL_LIGHT0, GL_AMBIENT, *ambLight);
+	glEnable(GL_LIGHT0);
 
 	/*
 	 *  Rendering of the whole station form the outside goes here
+	 *
+	 *  Legend for comments:
+	 *		ITS- Integrated Truss Segment
+	 *      JEM- Japanese Experiment Module
+	 *      ELM- Experiment Logistics Module
+	 *      ERL- European Research Laboratory
+	 *		SA-  Solar Arrays
+	 *		
+	 *		S- Starboard
+	 *		P- Port
+	 *		T- Top
+	 *		B- Bottom
+	 *
+	 *	Example: P6 ITS- Integrated Truss Segment Port side 6
 	 */
-	//Overall rotation and translation needed 
-	glRotatef(-20, 0.0, 1.0, 0.0);
-	
-	//Solar Arrays upper-left bank
-	glBegin(GL_QUADS);
-		//UL4 Bank
+	glTranslatef(view[0], view[1], view[2]);
+	glRotatef(theta[0], 1.0, 0.0, 0.0);
+	glRotatef(theta[1], 0.0, 1.0, 0.0);
+	glRotatef(theta[2], 0.0, 0.0, 1.0);
+
+	glPushMatrix();
+		ITS = gluNewQuadric();
+		gluQuadricDrawStyle(ITS, GLU_FILL);
+
+		ITS2 = gluNewQuadric();
+		gluQuadricDrawStyle(ITS2, GLU_LINE);
+
+		Labs = gluNewQuadric();
+		gluQuadricDrawStyle(Labs, GLU_FILL);
+
+		arr = gluNewQuadric();
+		gluQuadricDrawStyle(arr, GLU_FILL);
+
 		glColor3f(0.0, 0.0, 1.0);
-		glVertex3f(-275, 230, -100);
-		glVertex3f(-250, 230, -100);
-		glVertex3f(-250, -80, 50);
-		glVertex3f(-275, -80, 50);
 
-		//UL4-UL3 Connector
-		glColor3f(0.6, 0.6, 0.6);
-		glVertex3f(-280, 236, -100);
-		glVertex3f(-284, 236, -100);
-		glVertex3f(-284, -86, 50);
-		glVertex3f(-280, -86, 50);
+		//ST SA Bank 1
+		glPushMatrix();
+			glTranslatef(-31.5, 4.0, -100.0);
+			glRotatef(-90, 0.0, 1.0, 0.0);
+			glRotatef(-90, 1.0, 0.0, 0.0);
+			gluCylinder(arr, 1.6, 1.6, 40, 2, 1);
+		glPopMatrix();
 
-		//UL3 Bank
+		glColor3f(0.65, 0.65, 0.650);
+
+		glPushMatrix();
+			glTranslatef(-29.5, 4.0, -100.0);
+			glRotatef(-90, 0.0, 1.0, 0.0);
+			glRotatef(-90, 1.0, 0.0, 0.0);
+			gluCylinder(arr, 0.1, 0.1, 40, 2, 1);
+		glPopMatrix();
+
 		glColor3f(0.0, 0.0, 1.0);
-		glVertex3f(-290, 230, -100);
-		glVertex3f(-315, 230, -100);
-		glVertex3f(-315, -80, 50);
-		glVertex3f(-290, -80, 50);
 
-		//UL2 Bank
-		glVertex3f(-335, 230, -100);
-		glVertex3f(-360, 230, -100);
-		glVertex3f(-360, -80, 50);
-		glVertex3f(-335, -80, 50);
+		glPushMatrix();
+			glTranslatef(-27.5, 4.0, -100.0);
+			glRotatef(-90, 0.0, 1.0, 0.0);
+			glRotatef(-90, 1.0, 0.0, 0.0);
+			gluCylinder(arr, 1.6, 1.6, 40, 2, 1);
+		glPopMatrix();
 
-		//UL2-UL1 Connector
-		glColor3f(0.6, 0.6, 0.6);
-		glVertex3f(-369, 236, -100);
-		glVertex3f(-365, 236, -100);
-		glVertex3f(-365, -86, 50);
-		glVertex3f(-369, -86, 50);
+		//ST SA Bank 2
+		glPushMatrix();
+			glTranslatef(-22.0, 4.0, -100.0);
+			glRotatef(-90, 0.0, 1.0, 0.0);
+			glRotatef(-90, 1.0, 0.0, 0.0);
+			gluCylinder(arr, 1.6, 1.6, 40, 2, 1);
+		glPopMatrix();
 
-		//UL1 Bank
+		glColor3f(0.65, 0.65, 0.650);
+
+		glPushMatrix();
+			glTranslatef(-20, 4.0, -100.0);
+			glRotatef(-90, 0.0, 1.0, 0.0);
+			glRotatef(-90, 1.0, 0.0, 0.0);
+			gluCylinder(arr, 0.1, 0.1, 40, 2, 1);
+		glPopMatrix();
+
 		glColor3f(0.0, 0.0, 1.0);
-		glVertex3f(-375, 230, -100);
-		glVertex3f(-400, 230, -100);
-		glVertex3f(-400, -80, 50);
-		glVertex3f(-375, -80, 50);
-	glEnd();
 
-	//UL1 Bank to Truss connector
-	glPushMatrix();
-		glColor3f(0.6, 0.6, 0.6);
-		glTranslatef(-367, -86, -100);
-		glRotatef(-20, 0.0, 1.0, 0.0);
-		glutSolidCylinder(3.5, 20, 90, 2);
-	glPopMatrix();
+		glPushMatrix();
+			glTranslatef(-18.05, 4.0, -100.0);
+			glRotatef(-90, 0.0, 1.0, 0.0);
+			glRotatef(-90, 1.0, 0.0, 0.0);
+			gluCylinder(arr, 1.6, 1.6, 40, 2, 1);
+		glPopMatrix();
 
-	//UL2 Bank to Truss connector
-	glPushMatrix();
-		glColor3f(0.6, 0.6, 0.6);
-		glTranslatef(-282, -86, -100);
-		glRotatef(-20, 0.0, 1.0, 0.0);
-		glutSolidCylinder(3.5, 20, 90, 2);
-	glPopMatrix();
+		//SB SA Bank 1
+		glPushMatrix();
+			glTranslatef(-31.5, -43.0, -100.0);
+			glRotatef(-90, 0.0, 1.0, 0.0);
+			glRotatef(-90, 1.0, 0.0, 0.0);
+			gluCylinder(arr, 1.6, 1.6, 40, 2, 1);
+		glPopMatrix();
 
-	//Solar Arrays lower-left bank
-	glBegin(GL_QUADS);
-		//LL4 Bank
+		glColor3f(0.65, 0.65, 0.650);
+
+		glPushMatrix();
+			glTranslatef(-29.5, -43.0, -100.0);
+			glRotatef(-90, 0.0, 1.0, 0.0);
+			glRotatef(-90, 1.0, 0.0, 0.0);
+			gluCylinder(arr, 0.1, 0.1, 40, 2, 1);
+		glPopMatrix();
+
 		glColor3f(0.0, 0.0, 1.0);
-		glVertex3f(-267, -135, -100);
-		glVertex3f(-242, -135, -100);
-		glVertex3f(-242, -435, 50);
-		glVertex3f(-267, -435, 50);
 
-		//LL4-LL3 Connector
-		glColor3f(0.6, 0.6, 0.6);
-		glVertex3f(-272, -129, -100);
-		glVertex3f(-276, -129, -100);
-		glVertex3f(-276, -441, 50);
-		glVertex3f(-272, -441, 50);
+		glPushMatrix();
+			glTranslatef(-27.5, -43.0, -100.0);
+			glRotatef(-90, 0.0, 1.0, 0.0);
+			glRotatef(-90, 1.0, 0.0, 0.0);
+			gluCylinder(arr, 1.6, 1.6, 40, 2, 1);
+		glPopMatrix();
 
-		//LL3 Bank
+		//SB SA Bank 2
+		glPushMatrix();
+			glTranslatef(-22.0, -43.0, -100.0);
+			glRotatef(-90, 0.0, 1.0, 0.0);
+			glRotatef(-90, 1.0, 0.0, 0.0);
+			gluCylinder(arr, 1.6, 1.6, 40, 2, 1);
+		glPopMatrix();
+
+		glColor3f(0.65, 0.65, 0.650);
+
+		glPushMatrix();
+			glTranslatef(-20, -43.0, -100.0);
+			glRotatef(-90, 0.0, 1.0, 0.0);
+			glRotatef(-90, 1.0, 0.0, 0.0);
+			gluCylinder(arr, 0.1, 0.1, 40, 2, 1);
+		glPopMatrix();
+
 		glColor3f(0.0, 0.0, 1.0);
-		glVertex3f(-282, -135, -100);
-		glVertex3f(-307, -135, -100);
-		glVertex3f(-307, -435, 50);
-		glVertex3f(-282, -435, 50);
 
-		//LL2 Bank
-		glVertex3f(-327, -135, -100);
-		glVertex3f(-352, -135, -100);
-		glVertex3f(-352, -435, 50);
-		glVertex3f(-327, -435, 50);
+		glPushMatrix();
+			glTranslatef(-18.05, -43.0, -100.0);
+			glRotatef(-90, 0.0, 1.0, 0.0);
+			glRotatef(-90, 1.0, 0.0, 0.0);
+			gluCylinder(arr, 1.6, 1.6, 40, 2, 1);
+		glPopMatrix();
 
-		//LL2-LL1 Connector
-		glColor3f(0.6, 0.6, 0.6);
-		glVertex3f(-361, -129, -100);
-		glVertex3f(-357, -129, -100);
-		glVertex3f(-357, -441, 50);
-		glVertex3f(-361, -441, 50);
+		glColor3f(0.65, 0.65, 0.650);
 
-		//LL1 Bank
-		glColor3f(0.0, 0.0, 1.0);
-		glVertex3f(-367, -135, -100);
-		glVertex3f(-392, -135, -100);
-		glVertex3f(-392, -435, 50);
-		glVertex3f(-367, -435, 50);
-	glEnd();
+		//S6 ITS
+		glPushMatrix();
+			glTranslatef(-33.0, 0.0, -100.0);
+			glRotatef(45, 1.0, 0.0, 0.0);
+			glRotatef(90, 0.0, 1.0, 0.0);
+			gluCylinder(ITS, 4, 4, 7, 4, 6);
+		glPopMatrix();
 
-	//LL1 Bank to Truss connector
-	glPushMatrix();
-		glColor3f(0.6, 0.6, 0.6);
-		glTranslatef(-359, -115, -100);
-		glRotatef(-20, 0.0, 1.0, 0.0);
-		glutSolidCylinder(3.5, 20, 90, 35);
-	glPopMatrix();
-
-	//LL3 Bank to Turss connector
-	glPushMatrix();
-		glColor3f(0.6, 0.6, 0.6);
-		glTranslatef(-274.5, -115, -100);
-		glRotatef(-20, 0.0, 1.0, 0.0);
-		glutSolidCylinder(3.5, 20, 5, 10);
-	glPopMatrix();
-
-	//UL-LL to Truss connector
-	glPushMatrix();
-		glColor3f(0.6, 0.6, 0.6);
-		glTranslatef(-349, -107, -100);
-		glRotatef(-20, 1.0, 0.0, 0.0);
-		glutSolidCube(20);
-	glPopMatrix();
-
-	glPushMatrix();
-		glColor3f(0.6, 0.6, 0.6);
-		glTranslatef(-329, -107, -100);
-		glRotatef(-20, 1.0, 0.0, 0.0);
-		glutSolidCube(20);
-	glPopMatrix();
-
-	glPushMatrix();
-		glColor3f(0.6, 0.6, 0.6);
-		glTranslatef(-309, -107, -100);
-		glRotatef(-20, 1.0, 0.0, 0.0);
-		glutWireCube(20);
-	glPopMatrix();
-
-	glPushMatrix();
-		glColor3f(0.6, 0.6, 0.6);
-		glTranslatef(-289, -107, -100);
-		glRotatef(-20, 1.0, 0.0, 0.0);
-		glutSolidCube(20);
-	glPopMatrix();
-
-	//UL_LL to Truss connector
-	glPushMatrix();
-		glColor3f(0.6, 0.6, 0.6);
-		glTranslatef(-269, -107, -100);
-		glRotatef(-20, 1.0, 0.0, 0.0);
-		glutSolidCube(20);
-	glPopMatrix();
-
-	//Solar Array truss to main truss connector
-	glPushMatrix();
-		glColor3f(0.6, 0.6, 0.6);
-		glTranslatef(-249, -107, -100);
-		glRotatef(-20, 1.0, 0.0, 0.0);
-		glutWireCube(22);
-	glPopMatrix();
-
-	//Main Holding Truss unit left
-	glPushMatrix();
-		glColor3f(0.55, 0.55, 0.55);
-		glTranslatef(-237, -107, -100);
-		glRotatef(90, 0.0, 1.0, 0.0);
-		glutSolidCylinder(20, 50, 5, 10);
-	glPopMatrix();
-
-	//Living space, nodes, labs
-	glPushMatrix();
 		glColor3f(0.65, 0.65, 0.65);
 
+		//S5 ITS
+		glPushMatrix();
+			glTranslatef(-26.0, -0.8, -100.0);
+			glRotatef(90, 0.0, 1.0, 0.0);
+			gluCylinder(ITS2, 3.5, 3.5, 2, 3, 6);
+		glPopMatrix();
+
+		//S4 ITS
+		glPushMatrix();
+			glTranslatef(-20.6, 0.2, -100.0);
+			glRotatef(90, 0.0, 1.0, 0.0);
+			glutSolidCube(6.5);
+		glPopMatrix();
+
+		//S3 ITS
+		glPushMatrix();
+			glTranslatef(-17.6, -0.65, -100.0);
+			glRotatef(90, 0.0, 1.0, 0.0);
+			gluCylinder(ITS2, 3.5, 3.5, 4, 3, 6);
+		glPopMatrix();
+
+		//S1 ITS
+		glPushMatrix();
+			glTranslatef(-13.5, 0.0, -100.0);
+			glRotatef(90, 0.0, 1.0, 0.0);
+			gluCylinder(ITS, 3, 3, 7, 5, 10);
+		glPopMatrix();
+
+		glColor3f(0.5, 0.5, 0.5);
+
 		//Node 1 Unity
-		glColor3f(1.0, 0.0, 0.0);
-		glTranslatef(-163, -107, -100);
-		glRotatef(90, -165.0, -107.0, 0.0);
-		glutWireCylinder(22, 30, 44, 10);
+		glPushMatrix();
+			glTranslatef(-3.2, 0.0, -102.8);
+			gluCylinder(Labs, 3, 3, 7, 60, 10);
+		glPopMatrix();
 
 		//U.S. Lab Destiny
-		glTranslatef(00, 0, 36);
-		glutWireCylinder(15, 5, 44, 30);
-	glPopMatrix();
+		glPushMatrix();
+			glTranslatef(-3.2, 0.0, -95.0);
+			gluCylinder(Labs, 3, 3, 12, 60, 10);
+		glPopMatrix();
 
-	//Main Holding truss unit center
-	glPushMatrix();
-		glColor3f(0.55, 0.55, 0.55);
-		glTranslatef(-143, -107, -100);
-		glRotatef(90, 0.0, 1.0, 0.0);
-		glutSolidCylinder(20, 50, 5, 10);
-	glPopMatrix();
+		//Node 2 Harmony
+		glPushMatrix();
+			glTranslatef(-3.2, 0.0, -82.0);
+			gluCylinder(Labs, 3, 3, 7, 60, 10);
+		glPopMatrix();
 
-	//Main Holding truss unit right
-	glPushMatrix();
-		glColor3f(0.55, 0.55, 0.55);
-		glTranslatef(-123, -107, -100);
-		glRotatef(90, 0.0, 1.0, 0.0);
-		glutSolidCylinder(20, 50, 5, 10);
-	glPopMatrix();
+ 		//JEM Kibo (Hope)
+		glPushMatrix();
+			glTranslatef(-0.0, 0.0, -78.5);
+			glRotatef(90, 0.0, 1.0, 0.0);
+			gluCylinder(Labs, 3, 3, 7, 60, 10);
+		glPopMatrix();
 
-	//Solar Array truss to main truss connector
-	glPushMatrix();
-		glColor3f(0.6, 0.6, 0.6);
-		glTranslatef(-61, -107, -100);
-		glRotatef(-20, 1.0, 0.0, 0.0);
-		glutWireCube(22);
-	glPopMatrix();
+		//JEM ELM Pressurised Section
+		glPushMatrix();
+			glTranslatef(4.5, 3.0, -78.5);
+			glRotatef(-90, 1.0, 0.0, 0.0);
+			gluCylinder(Labs, 2, 2, 4.5, 60, 10);
+		glPopMatrix();
 
-	//Right Array left to Truss connector
-	glPushMatrix();
-		glColor3f(0.6, 0.6, 0.6);
-		glTranslatef(-40, -107, -100);
-		glRotatef(-20, 1.0, 0.0, 0.0);
-		glutSolidCube(20);
-	glPopMatrix();
+		//ERL Columbus
+		glPushMatrix();
+			glTranslatef(-6.3, 0.0, -78.5);
+			glRotatef(-90, 0.0, 1.0, 0.0);
+			gluCylinder(Labs, 3, 3, 7, 60, 10);
+		glPopMatrix();
 
-	//Right Array right to Truss connector
-	glPushMatrix();
-		glColor3f(0.6, 0.6, 0.6);
-		glTranslatef(-20, -107, -100);
-		glRotatef(-20, 1.0, 0.0, 0.0);
-		glutSolidCube(20);
-	glPopMatrix();
+		glColor3f(0.65, 0.65, 0.65);
 
-	glPushMatrix();
-		glColor3f(0.6, 0.6, 0.6);
-		glTranslatef(0, -107, -100);
-		glRotatef(-20, 1.0, 0.0, 0.0);
-		glutWireCube(20);
-	glPopMatrix();
+		//S0 ITS
+		glPushMatrix();
+			glTranslatef(0.0, 0.0, -100.0);
+			glRotatef(90, 0.0, 1.0, 0.0);
+			gluCylinder(ITS, 3, 3, 7, 5, 10);
+		glPopMatrix();
 
-	glPushMatrix();
-		glColor3f(0.6, 0.6, 0.6);
-		glTranslatef(20, -107, -100);
-		glRotatef(-20, 1.0, 0.0, 0.0);
-		glutSolidCube(20);
-	glPopMatrix();
+		//P1 ITS
+		glPushMatrix();
+			glTranslatef(7.0, 0.0, -100.0);
+			glRotatef(90, 0.0, 1.0, 0.0);
+			gluCylinder(ITS, 3, 3, 5, 5, 10);
+		glPopMatrix();
 
-	glPushMatrix();
-		glColor3f(0.6, 0.6, 0.6);
-		glTranslatef(40, -107, -100);
-		glRotatef(-20, 1.0, 0.0, 0.0);
-		glutSolidCube(20);
-	glPopMatrix();
+		//P3 ITS
+		glPushMatrix();
+			glTranslatef(16.0, -0.65, -100.0);
+			glRotatef(-90, 0.0, 1.0, 0.0);
+			gluCylinder(ITS2, 3.5, 3.5, 4, 3, 6);
+		glPopMatrix();
 
-	//Solar Arrays upper-right bank
-	glBegin(GL_QUADS);
+		//P4 ITS
+		glPushMatrix();
+			glTranslatef(18, 0.2, -100.0);
+			glRotatef(-90, 0.0, 1.0, 0.0);
+			glutSolidCube(6.5);
+		glPopMatrix();
+
+		//P5 ITS
+		glPushMatrix();
+			glTranslatef(24.0, -0.8, -100.0);
+			glRotatef(-90, 0.0, 1.0, 0.0);
+			gluCylinder(ITS2, 3.5, 3.5, 2, 3, 6);
+		glPopMatrix();
+
+		//P6 ITS
+		glPushMatrix();
+			glTranslatef(30.6, 0.0, -100.0);
+			glRotatef(45, 1.0, 0.0, 0.0);
+			glRotatef(-90, 0.0, 1.0, 0.0);
+			gluCylinder(ITS, 4, 4, 7, 4, 6);
+		glPopMatrix();
+
 		glColor3f(0.0, 0.0, 1.0);
-		glVertex3f(275, 200, -100);
-		glVertex3f(250, 200, -100);
-		glVertex3f(250, -100, 50);
-		glVertex3f(275, -100, 50);
 
-		glVertex3f(280, 200, -100);
-		glVertex3f(305, 200, -100);
-		glVertex3f(305, -100, 50);
-		glVertex3f(280, -100, 50);
+		//PA SA Bank1
+		glPushMatrix();
+			glTranslatef(25.5, 4.0, -100.0);
+			glRotatef(-90, 0.0, 1.0, 0.0);
+			glRotatef(-90, 1.0, 0.0, 0.0);
+			gluCylinder(arr, 1.6, 1.6, 40, 2, 1);
+		glPopMatrix();
 
-		glVertex3f(320, 200, -100);
-		glVertex3f(345, 200, -100);
-		glVertex3f(345, -100, 50);
-		glVertex3f(320, -100, 50);
+		glColor3f(0.65, 0.65, 0.650);
 
-		glVertex3f(350, 200, -100);
-		glVertex3f(375, 200, -100);
-		glVertex3f(375, -100, 50);
-		glVertex3f(350, -100, 50);
-	glEnd();
+		glPushMatrix();
+			glTranslatef(27.5, 4.0, -100.0);
+			glRotatef(-90, 0.0, 1.0, 0.0);
+			glRotatef(-90, 1.0, 0.0, 0.0);
+			gluCylinder(arr, 0.1, 0.1, 40, 2, 1);
+		glPopMatrix();
 
-	//Solar Arrays lower-right bank
-	glBegin(GL_QUADS);
 		glColor3f(0.0, 0.0, 1.0);
-		glVertex3f(275, -135, -100);
-		glVertex3f(250, -135, -100);
-		glVertex3f(250, -435, 50);
-		glVertex3f(275, -435, 50);
 
-		glVertex3f(280, -135, -100);
-		glVertex3f(305, -135, -100);
-		glVertex3f(305, -435, 50);
-		glVertex3f(280, -435, 50);
+		glPushMatrix();
+			glTranslatef(29.5, 4.0, -100.0);
+			glRotatef(-90, 0.0, 1.0, 0.0);
+			glRotatef(-90, 1.0, 0.0, 0.0);
+			gluCylinder(arr, 1.6, 1.6, 40, 2, 1);
+		glPopMatrix();
 
-		glVertex3f(320, -135, -100);
-		glVertex3f(345, -135, -100);
-		glVertex3f(345, -435, 50);
-		glVertex3f(320, -435, 50);
+		//PA SA Bank2
+		glPushMatrix();
+			glTranslatef(20, 4.0, -100.0);
+			glRotatef(-90, 0.0, 1.0, 0.0);
+			glRotatef(-90, 1.0, 0.0, 0.0);
+			gluCylinder(arr, 1.6, 1.6, 40, 2, 1);
+		glPopMatrix();
 
-		glVertex3f(350, -135, -100);
-		glVertex3f(375, -135, -100);
-		glVertex3f(375, -435, 50);
-		glVertex3f(350, -435, 50);
-	glEnd();
+		glColor3f(0.65, 0.65, 0.650);
 
-		/*
-		*  Background for this page to go here
-		*/
-	while (i<400)
-	{
+		glPushMatrix();
+			glTranslatef(18, 4.0, -100.0);
+			glRotatef(-90, 0.0, 1.0, 0.0);
+			glRotatef(-90, 1.0, 0.0, 0.0);
+			gluCylinder(arr, 0.1, 0.1, 40, 2, 1);
+		glPopMatrix();
+
+		glColor3f(0.0, 0.0, 1.0);
+
+		glPushMatrix();
+			glTranslatef(16, 4.0, -100.0);
+			glRotatef(-90, 0.0, 1.0, 0.0);
+			glRotatef(-90, 1.0, 0.0, 0.0);
+			gluCylinder(arr, 1.6, 1.6, 40, 2, 1);
+		glPopMatrix();
+
+		//PA SA Bank1
+		glPushMatrix();
+			glTranslatef(25.5, -43.0, -100.0);
+			glRotatef(-90, 0.0, 1.0, 0.0);
+			glRotatef(-90, 1.0, 0.0, 0.0);
+			gluCylinder(arr, 1.6, 1.6, 40, 2, 1);
+		glPopMatrix();
+
+		glColor3f(0.65, 0.65, 0.650);
+
+		glPushMatrix();
+			glTranslatef(27.5, -43.0, -100.0);
+			glRotatef(-90, 0.0, 1.0, 0.0);
+			glRotatef(-90, 1.0, 0.0, 0.0);
+			gluCylinder(arr, 0.1, 0.1, 40, 2, 1);
+		glPopMatrix();
+
+		glColor3f(0.0, 0.0, 1.0);
+
+		glPushMatrix();
+			glTranslatef(29.5, -43.0, -100.0);
+			glRotatef(-90, 0.0, 1.0, 0.0);
+			glRotatef(-90, 1.0, 0.0, 0.0);
+			gluCylinder(arr, 1.6, 1.6, 40, 2, 1);
+		glPopMatrix();
+
+		//PB SA Bank2
+		glPushMatrix();
+			glTranslatef(20, -43.0, -100.0);
+			glRotatef(-90, 0.0, 1.0, 0.0);
+			glRotatef(-90, 1.0, 0.0, 0.0);
+			gluCylinder(arr, 1.6, 1.6, 40, 2, 1);
+		glPopMatrix();
+
+		glColor3f(0.65, 0.65, 0.650);
+
+		glPushMatrix();
+			glTranslatef(18, -43.0, -100.0);
+			glRotatef(-90, 0.0, 1.0, 0.0);
+			glRotatef(-90, 1.0, 0.0, 0.0);
+			gluCylinder(arr, 0.1, 0.1, 40, 2, 1);
+		glPopMatrix();
+
+		glColor3f(0.0, 0.0, 1.0);
+
+		glPushMatrix();
+			glTranslatef(16, -43.0, -100.0);
+			glRotatef(-90, 0.0, 1.0, 0.0);
+			glRotatef(-90, 1.0, 0.0, 0.0);
+			gluCylinder(arr, 1.6, 1.6, 40, 2, 1);
+		glPopMatrix();
+	glPopMatrix();
+
+	/*
+	 *  Background for this page to go here
+	 */
+	while (i<400) {
 		i++;
 		a = rand() % 600;
 		b = rand() % 600;
@@ -340,7 +418,7 @@ void overviewScn(void)
 		glPointSize(j);
 		glBegin(GL_POINTS);
 		glColor3f(1.0, 1.0, 1.0);
-		glVertex2f(a, b);
+		glVertex3f(a, b, -200);
 		glEnd();
 
 		a = rand() % 600;
@@ -349,7 +427,7 @@ void overviewScn(void)
 		glPointSize(j);
 		glBegin(GL_POINTS);
 		glColor3f(1.0, 1.0, 1.0);
-		glVertex2f(-a, b);
+		glVertex3f(-a, b, -200);
 		glEnd();
 
 		a = rand() % 600;
@@ -358,7 +436,7 @@ void overviewScn(void)
 		glPointSize(j);
 		glBegin(GL_POINTS);
 		glColor3f(1.0, 1.0, 1.0);
-		glVertex2f(a, -b);
+		glVertex3f(a, -b, -200);
 		glEnd();
 
 		a = rand() % 600;
@@ -367,11 +445,14 @@ void overviewScn(void)
 		glPointSize(j);
 		glBegin(GL_POINTS);
 		glColor3f(1.0, 1.0, 1.0);
-		glVertex2f(-a, -b);
+		glVertex3f(-a, -b, -200);
 		glEnd();
-
 	}
 
-		glColor3f(0.0, 0.0, 0.0);
-		dispText(100, 100, "Press C to continue");
+	//Remove once click to render is implemented on overview
+	glColor3f(1.0, 1.0, 1.0);
+	dispText(10, 10, "Press C to continue");
+
+	glDisable(GL_LIGHT0);
+	glDisable(GL_LIGHTING);
 }

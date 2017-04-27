@@ -22,8 +22,8 @@ int main(int argc, char **argv)
 	/*
 	 * Get window parameters and create initial window
 	 */
-	scnWidth = glutGet(GLUT_SCREEN_WIDTH);
-	scnHeight = glutGet(GLUT_SCREEN_HEIGHT);
+	scnWidth = 1920;
+	scnHeight = 1080;
 
 	glutInitWindowSize(scnWidth, scnHeight);
 	glutInitWindowPosition(0, 0);
@@ -34,6 +34,7 @@ int main(int argc, char **argv)
 	glutReshapeFunc(reshape);
 	glutFullScreenToggle();
 	glutMouseFunc(mouse);
+	glutPassiveMotionFunc(moveMouse);
 	glutKeyboardFunc(keyboard);
 
 	glutMainLoop();
