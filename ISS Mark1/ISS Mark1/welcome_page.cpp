@@ -133,7 +133,7 @@ void welcomeScn(void)
 	glEnd();
 }
 
-void dispText(float x, float y, const char *text)
+void dispText(GLfloat x, GLfloat y, const char *text)
 {
 	unsigned char i, len;
 	glRasterPos2f(x, y);

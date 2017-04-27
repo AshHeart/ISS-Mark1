@@ -30,7 +30,7 @@ void render(void)
 		break;
 
 	case 3:
-		renderScn();
+		showDetails();
 		break;
 	}
 	glutSwapBuffers();
