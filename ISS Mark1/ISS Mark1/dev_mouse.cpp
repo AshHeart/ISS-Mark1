@@ -12,7 +12,7 @@ float scX, scY;	                                //Screen values
 float lastX = 0, lastY = 0, lastZ = 0;		   //Last x, y and z values
 float diffX, diffY, diffZ;			          //Difference of x, y and z values
 float camLrRot, camUdRot;		             //Camera rotation Left Right Up Down
-float camX = 1.0, camY = 1.0, camZ = -1.0;  //Camera Postitons
+float camX = -1.0, camY = 2.0, camZ = -1.0; //Camera Postitons
 float rotSpeed = 0.5;			           //Rotation speed is .5x
 
 void mouse(int button, int state, int x, int y)
