@@ -13,7 +13,7 @@ float globx, globy;  //Global values
 float lastx = 0, lasty = 0, lastz = 0;		//Last x, y and z values
 float diffx, diffy, diffz;			//Difference of x, y and zvalues
 float camLrRot, camUdRot;		//Camera rotation Left Right Up Down
-float rotSpeed = 0.5;			//Rotation speed is .5x
+float rotSpeed = 0.2;			//Rotation speed is .2x
 
 void mouse(int button, int state, int x, int y)
 {

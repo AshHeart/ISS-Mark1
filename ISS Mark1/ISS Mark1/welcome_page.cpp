@@ -32,30 +32,30 @@ void welcomeScn(void)
 	dispText(-118.0, 200.0, "Computer Graphics and Visualization");
 	dispText(-38.0, 160.0, "Mini Project");
 	dispText(-10.0, 120.0, "On");
-	dispText(-93.0, 80.0, "3D-Environment Exploration");
-	dispText(-98.0, 30.0, "The International Space Station");
-
-	dispText(-460.0, -200.0, "Project Guide");
-	dispText(-460.0, -200.0, "___________");
-	dispText(-450.0, -250.0, "Ms. Vijetha");
-	dispText(-450.0, -300.0, "Asst. Prof.");
-	dispText(-450.0, -350.0, "CSE Dept.");
-	dispText(290.0, -200.0, "Project Coordinator");
-	dispText(290.0, -200.0, "_______________");
-	dispText(290.0, -250.0, "  Mr. Aravind Naik");
-	dispText(320.0, -300.0, "Asst. Prof.");
-	dispText(315.8, -350, " CSE Dept.");
-	dispText(-58.0, -200.0, " Team Members");
-	dispText(-58.0, -200.0, " ____________");
-	dispText(-92.0, -250.0, "Ashweyth Sunil  4SN14CS022");
-	dispText(-98.0, -300.0, "Jayasooryan T M  4SN14CS048");
-	dispText(-61.7, -350.0, "CSE Dept. 6 CS-A");
+	//dispText(-93.0, 80.0, "3D-Environment Exploration");
+	dispText(-130.0, 30.0, "3D International Space Station Exploration");
+	
+	dispText(290.0, -200.0, "Project Guide");
+	dispText(290.0, -200.0, "___________");
+	dispText(290.0, -250.0, "Ms. Vijetha");
+	dispText(290.0, -290.0, "Asst. Professor");
+	dispText(290.0, -330, "CSE Department");
+	//dispText(290.0, -200.0, "Project Coordinator");
+	//dispText(290.0, -200.0, "_______________");
+	//dispText(290.0, -250.0, "  Mr. Aravind Naik");
+	//dispText(320.0, -300.0, "Asst. Prof.");
+	//dispText(315.8, -350, " CSE Dept.");
+	dispText(-400.0, -200.0, " Team Members");
+	dispText(-400.0, -200.0, " ____________");
+	dispText(-400.0, -250.0, "Ashweyth Sunil  4SN14CS022");
+	dispText(-400.0, -290.0, "Jayasooryan T M  4SN14CS048");
+	dispText(-400.0, -330.0, "CSE Dept. VI CS-A");
 
 	/*
 	 *	Button rendering to move forward to next screen
 	 */
 	glColor3f(1.0, 1.0, 1.0);
-	dispText(-30, -437, "Continue");
+	dispText(-25, -437, "Continue");
 
 	glBegin(GL_POLYGON);
 		glColor3f(0.025, 0.025, 0.75);
@@ -76,6 +76,7 @@ void welcomeScn(void)
 	/*
 	 *  Background rendering code. cool gradients generated
 	 */
+
 	glBegin(GL_TRIANGLES);
 		glColor3f(0.0, 0.0, 0.2);
 		glVertex2f(500.0, 100.0);
