@@ -29,6 +29,10 @@ void keyboard(unsigned char, int, int);	 //To handle keyboard functions and inte
 void cameraControl();					//To handle idle and active camera
 void showDetails(void);
 //void infoscn(void);				//To display the info about keys and controls
+void specKeys(int, int, int);						//To handle special keys
+void specKeysUp(int, int, int);						//Special kesy release handler
+void setupTextures();
+void freeTextures();
 
 /*
  *  External variables declarations to be 
@@ -43,3 +47,8 @@ extern GLfloat theta[3]; //To rotate in one of three axis
 extern void *font;		//Font used
 extern float camLrRot;	//Camera x rotation
 extern float camUdRot;  //Camera y rotation
+extern float camX;
+extern float camY;
+extern float camZ;
+extern GLuint textures[10];
+extern bool specKey[255];
