@@ -38,7 +38,7 @@ void render(void)
 		break;
 
 	case 5:
-		infoscn();
+//		infoscn();
 		break;
 	}
 

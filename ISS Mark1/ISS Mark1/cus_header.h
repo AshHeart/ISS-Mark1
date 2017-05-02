@@ -28,7 +28,7 @@ void moveMouse(int, int);				//To register mouse movement
 void keyboard(unsigned char, int, int);	 //To handle keyboard functions and interactions
 void cameraControl();					//To handle idle and active camera
 void showDetails(void);
-void infoscn(void);				//To display the info about keys and controls
+//void infoscn(void);				//To display the info about keys and controls
 
 /*
  *  External variables declarations to be 
