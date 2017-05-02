@@ -30,14 +30,14 @@ void keyboard(unsigned char key, int x, int y) {
 	}
 
 	if (screen == 2 || screen == 3 || screen == 4) {
-		if (key == 'w')	view[1] += 1;	  //y view
+		if (key == 's')	view[1] += 1;	  //y view
 		if (key == 'a') view[0] += 1;	 //x view
-		if (key == 'j')	view[2] += 1;	//z view
+		if (key == 'w')	view[2] += 1;	//z view
 
-		if (key == 's') view[1] -= 1;     //-y view
+		if (key == 'f') view[1] -= 1;     //-y view
 		if (key == 'd') view[0] -= 1;    //-x view
-		if (key == 'l') view[2] -= 1;	//-z view
-
+		if (key == 'r') view[2] -= 1;	//-z view
+		
 		if (key == 'v') axis = 0;
 		if (key == 'b') axis = 1;
 		if (key == 'n') axis = 2;
@@ -45,6 +45,10 @@ void keyboard(unsigned char key, int x, int y) {
 		theta[axis] += 1.0;
 		if (theta[axis] > 360.0) theta[axis] -= 360.0;
 		overviewScn();
+	}
+
+	if (key == 27 && screen == 1 || screen == 2 || screen == 3 || screen == 4) {
+		screen = 5;
 	}
 
 	glutPostRedisplay();
