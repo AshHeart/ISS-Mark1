@@ -32,14 +32,14 @@ void welcomeScn(void)
 	dispText(-118.0, 200.0, "Computer Graphics and Visualization");
 	dispText(-38.0, 160.0, "Mini Project");
 	dispText(-10.0, 120.0, "On");
-	dispText(-93.0, 80.0, "3D-Environment Exploration");
-	dispText(-98.0, 30.0, "The International Space Station");
-
+	//dispText(-93.0, 80.0, "3D-Environment Exploration");
+	dispText(-130.0, 30.0, "3D International Space Station Exploration");
+	
 	dispText(290.0, -200.0, "Project Guide");
 	dispText(290.0, -200.0, "___________");
 	dispText(290.0, -250.0, "Ms. Vijetha");
-	dispText(290.0, -280.0, "Asst. Professor");
-	dispText(290.0, -310, "CSE Department");
+	dispText(290.0, -290.0, "Asst. Professor");
+	dispText(290.0, -330, "CSE Department");
 	//dispText(290.0, -200.0, "Project Coordinator");
 	//dispText(290.0, -200.0, "_______________");
 	//dispText(290.0, -250.0, "  Mr. Aravind Naik");
@@ -48,8 +48,8 @@ void welcomeScn(void)
 	dispText(-400.0, -200.0, " Team Members");
 	dispText(-400.0, -200.0, " ____________");
 	dispText(-400.0, -250.0, "Ashweyth Sunil  4SN14CS022");
-	dispText(-400.0, -280.0, "Jayasooryan T M  4SN14CS048");
-	dispText(-400.0, -310.0, "CSE Dept. VI CS-A");
+	dispText(-400.0, -290.0, "Jayasooryan T M  4SN14CS048");
+	dispText(-400.0, -330.0, "CSE Dept. VI CS-A");
 
 	/*
 	 *	Button rendering to move forward to next screen
