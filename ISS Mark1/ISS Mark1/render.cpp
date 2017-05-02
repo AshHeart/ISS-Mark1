@@ -36,6 +36,10 @@ void render(void)
 	case 4:
 		renderScn();
 		break;
+
+	case 5:
+		infoscn();
+		break;
 	}
 
 	glutSwapBuffers();
