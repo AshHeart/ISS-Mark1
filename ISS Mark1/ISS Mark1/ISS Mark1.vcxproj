@@ -129,6 +129,7 @@
     <ClCompile Include="overview_page.cpp" />
     <ClCompile Include="render_details.cpp" />
     <ClCompile Include="render_modules.cpp" />
+    <ClCompile Include="textures.cpp" />
     <ClCompile Include="welcome_page.cpp" />
   </ItemGroup>
   <ItemGroup>
