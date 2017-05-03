@@ -14,14 +14,12 @@ bool loadTextures(GLuint *texture, char *filePath, GLint width, GLint height) {
 	FILE *file;
 
 	fopen_s(&file, filePath, "rb"); //Open file
-	if (file == NULL)				//Failed to open file does not exist
-	{
+	if (file == NULL) {			//Failed to open file does not exist
 		return FALSE;
 	}
 
 	data = (unsigned char *)malloc(width * height * 3); //Assign memory space for storing data
-	if (data == NULL)				//Failed to reserve memory needed
-	{
+	if (data == NULL) {				//Failed to reserve memory needed
 		fclose(file);
 		return FALSE;
 	}
@@ -42,7 +40,7 @@ bool loadTextures(GLuint *texture, char *filePath, GLint width, GLint height) {
 
 void setupTextures()
 {
-	loadTextures(&textures[0], "Textures/solarPanel.bmp", 256, 256);
+	loadTextures(&textures[0], "./Textures/solarPanel.bmp", 421, 421);
 }
 
 void freeTextures()
