@@ -2,7 +2,7 @@
  *  File: render_details.cpp
  *  Author: Seth Jennings <ash.snaray@gmail.com>
  *
- *  Renders details abotu selected module and gives an option to enter for exploration
+ *  Renders details about selected module and gives an option to enter for exploration
  */
 #include "cus_header.h"
 
@@ -24,25 +24,10 @@ void showDetails(void)
 	renderColumbus();
 
 	/*
-     *	Enter button
+     *	Option to go back
 	 */
 	glColor3f(0.0, 0.0, 0.0);
-	dispText3D(185, -380, 100, "Enter Module");
-
-	glBegin(GL_LINE_LOOP);
-		glVertex3f(160, -340, 100);
-		glVertex3f(160, -410, 100);
-		glVertex3f(290, -410, 100);
-		glVertex3f(290, -340, 100);
-	glEnd();
-
-	glBegin(GL_QUADS);
-		glColor3f(1.0, 1.0, 1.0);
-		glVertex3f(150, -330, 100);
-		glVertex3f(150, -420, 100);
-		glVertex3f(300, -420, 100);
-		glVertex3f(300, -330, 100);
-	glEnd();
+	dispText3D(185, -380, 100, "Press b to go back");
 
 	/*
 	 *  Grid for the table
@@ -110,10 +95,6 @@ void showDetails(void)
 		glVertex3f(450, -100, 100);
 		glVertex3f(10, -100, 100);
 	glEnd();
-
-	/*
-	 *	Background for the page
-	 */
 }
 
 void renderDestiny()
@@ -183,6 +164,73 @@ void renderDestiny()
 		glTranslatef(0.0, 0.0, 10);
 		gluCylinder(obj, 50, 0, 1, 30, 5);
 	glPopMatrix();
+
+	/*
+	*  Grid for the table
+	*/
+	glBegin(GL_QUADS);
+	glColor3f(0.65, 0.65, 0.65);
+	glVertex3f(30, 340, 100);
+	glVertex3f(430, 340, 100);
+	glVertex3f(430, 343, 100);
+	glVertex3f(30, 343, 100);
+	glEnd();
+
+	glBegin(GL_QUADS);
+	glColor3f(0.65, 0.65, 0.65);
+	glVertex3f(30, 240, 100);
+	glVertex3f(430, 240, 100);
+	glVertex3f(430, 242.5, 100);
+	glVertex3f(30, 242.5, 100);
+	glEnd();
+
+	glBegin(GL_QUADS);
+	glColor3f(0.65, 0.65, 0.65);
+	glVertex3f(30, 130, 100);
+	glVertex3f(430, 130, 100);
+	glVertex3f(430, 133, 100);
+	glVertex3f(30, 133, 100);
+	glEnd();
+
+	glBegin(GL_QUADS);
+	glColor3f(0.65, 0.65, 0.65);
+	glVertex3f(30, 20, 100);
+	glVertex3f(430, 20, 100);
+	glVertex3f(430, 23, 100);
+	glVertex3f(30, 23, 100);
+	glEnd();
+
+	glBegin(GL_QUADS);
+	glColor3f(0.65, 0.65, 0.65);
+	glVertex3f(30, -100, 100);
+	glVertex3f(430, -100, 100);
+	glVertex3f(430, -103, 100);
+	glVertex3f(30, -103, 100);
+	glEnd();
+
+	glBegin(GL_QUADS);
+	glColor3f(0.65, 0.65, 0.65);
+	glVertex3f(30, -190, 100);
+	glVertex3f(430, -190, 100);
+	glVertex3f(430, -193, 100);
+	glVertex3f(30, -193, 100);
+	glEnd();
+
+	glBegin(GL_QUADS);
+	glColor3f(0.65, 0.65, 0.65);
+	glVertex3f(220, 430, 100);
+	glVertex3f(222, 430, 100);
+	glVertex3f(222, -80, 100);
+	glVertex3f(220, -80, 100);
+	glEnd();
+
+	glBegin(GL_QUADS);
+	glColor3f(0.25, 0.25, 0.25);
+	glVertex3f(10, 450, 100);
+	glVertex3f(450, 450, 100);
+	glVertex3f(450, -100, 100);
+	glVertex3f(10, -100, 100);
+	glEnd();
 }
 
 void renderColumbus()
@@ -199,10 +247,6 @@ void renderColumbus()
 
 	dispText3D(50, 180, 100, "Launch Mass");
 	dispText3D(260, 180, 100, "10,300 kg (22,700 lb)");
-
-	//dispText3D(50, 80, 100, "Exterior");
-	//dispText3D(260, 80, 100, "Aluminum, 3 cylindrical");
-	//dispText3D(260, 50, 100, "sections 2 endcones");
 
 	dispText3D(50, 80, 100, "Number of Racks");
 	dispText3D(260, 80, 100, "10 International Standard");
@@ -250,6 +294,57 @@ void renderColumbus()
 	glTranslatef(0.0, 0.0, 10);
 	gluCylinder(obj, 50, 0, 1, 30, 5);
 	glPopMatrix();
+
+	/*
+	*  Grid for the table
+	*/
+	glBegin(GL_QUADS);
+	glColor3f(0.65, 0.65, 0.65);
+	glVertex3f(30, 340, 100);
+	glVertex3f(430, 340, 100);
+	glVertex3f(430, 343, 100);
+	glVertex3f(30, 343, 100);
+	glEnd();
+
+	glBegin(GL_QUADS);
+	glColor3f(0.65, 0.65, 0.65);
+	glVertex3f(30, 240, 100);
+	glVertex3f(430, 240, 100);
+	glVertex3f(430, 242.5, 100);
+	glVertex3f(30, 242.5, 100);
+	glEnd();
+
+	glBegin(GL_QUADS);
+	glColor3f(0.65, 0.65, 0.65);
+	glVertex3f(30, 130, 100);
+	glVertex3f(430, 130, 100);
+	glVertex3f(430, 133, 100);
+	glVertex3f(30, 133, 100);
+	glEnd();
+
+	glBegin(GL_QUADS);
+	glColor3f(0.65, 0.65, 0.65);
+	glVertex3f(30, 20, 100);
+	glVertex3f(430, 20, 100);
+	glVertex3f(430, 23, 100);
+	glVertex3f(30, 23, 100);
+	glEnd();
+
+	glBegin(GL_QUADS);
+	glColor3f(0.65, 0.65, 0.65);
+	glVertex3f(220, 430, 100);
+	glVertex3f(222, 430, 100);
+	glVertex3f(222, -80, 100);
+	glVertex3f(220, -80, 100);
+	glEnd();
+
+	glBegin(GL_QUADS);
+	glColor3f(0.25, 0.25, 0.25);
+	glVertex3f(10, 450, 100);
+	glVertex3f(450, 450, 100);
+	glVertex3f(450, -100, 100);
+	glVertex3f(10, -100, 100);
+	glEnd();
 }
 
 void dispText3D(GLfloat x, GLfloat y, GLfloat z, const char *text)
