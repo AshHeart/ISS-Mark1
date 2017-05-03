@@ -13,6 +13,7 @@ GLint i = 0, j = 0;
 
 void drawDestiny(void);
 void drawHarmony(void);
+void drawColumbus(void);
 
 void renderScn(void)
 {
@@ -36,6 +37,7 @@ void renderScn(void)
 	*/
 	drawDestiny();
 	drawHarmony();
+	drawColumbus();
 }
 
 void drawDestiny()
@@ -433,12 +435,13 @@ void drawHarmony()
 
 	//Left Wall
 	glBegin(GL_POLYGON);  //Right
+	
 		glVertex3f(-4.0, 0.0, -9.0);
 		glVertex3f(-4.0, 0.0, -8.7);
 		glVertex3f(-4.0, 5.0, -8.7);
 		glVertex3f(-4.0, 5.0, -9.0);
 	glEnd();
-
+	
 	glBegin(GL_POLYGON);  //Bottom
 		glVertex3f(-4.0, 0.0, -9.0);
 		glVertex3f(-4.0, 1.0, -9.0);
@@ -459,4 +462,136 @@ void drawHarmony()
 		glVertex3f(-4.0, 4.0, -6.0);
 		glVertex3f(-4.0, 5.0, -6.0);
 	glEnd();
+
+	//Harmony Connector
+	glBegin(GL_POLYGON); //Left
+	glColor3f(1, 1, 1);
+	glVertex3f(-4.0, 1.0, -7.5);
+	glVertex3f(-4.5, 1.0, -7.5);
+	glVertex3f(-4.5, 4.0, -7.5);
+	glVertex3f(-4.0, 4.0, -7.5);
+	glEnd();
+
+	glBegin(GL_POLYGON); //Bottom
+	
+	glVertex3f(-4.0, 1.0, -8.7);
+	glVertex3f(-4.5, 1.0, -8.7);
+	glVertex3f(-4.5, 1.0, -7.5);
+	glVertex3f(-4.0, 1.0, -7.5);
+	glEnd();
+
+	glBegin(GL_POLYGON); //Right
+
+	glVertex3f(-4.0, 1.0, -8.7);
+	glVertex3f(-4.5, 1.0, -8.7);
+	glVertex3f(-4.5, 4.0, -8.7);
+	glVertex3f(-4.0, 4.0, -8.7);
+	glEnd();
+
+	glBegin(GL_POLYGON); //Top
+
+	glVertex3f(-4.0, 4.0, -8.7);
+	glVertex3f(-4.5, 4.0, -8.7);
+	glVertex3f(-4.5, 4.0, -7.5);
+	glVertex3f(-4.0, 4.0, -7.5);
+	glEnd();
+}
+
+void drawColumbus()
+{
+	//wall with entry gap
+	//Right wall
+	glBegin(GL_POLYGON);
+	glColor3f(0.7, 0.7, 0.7);
+	glVertex3f(-4.5, 0.0, -8.7);
+	glVertex3f(-4.5, 0.0, -10.0);
+	glVertex3f(-4.5, 5.0, -10.0);
+	glVertex3f(-4.5, 5.0, -8.7);
+	glEnd();
+
+	//left wall
+	glBegin(GL_POLYGON);
+	
+	glVertex3f(-4.5, 0.0, -6.0);
+	glVertex3f(-4.5, 0.0, -7.5);
+	glVertex3f(-4.5, 5.0, -7.5);
+	glVertex3f(-4.5, 5.0, -6.0);
+	glEnd();
+
+	//top wall
+	glBegin(GL_POLYGON); 
+	glVertex3f(-4.5, 4.0, -8.7);
+	glVertex3f(-4.5, 5.0, -8.7);
+	glVertex3f(-4.5, 5.0, -7.5);
+	glVertex3f(-4.5, 4.0, -7.5);
+	glEnd();
+
+	//bottom wall
+	glBegin(GL_POLYGON); 
+	glVertex3f(-4.5, 1.0, -8.7);
+	glVertex3f(-4.5, 0.0, -8.7);
+	glVertex3f(-4.5, 0.0, -7.5);
+	glVertex3f(-4.5, 1.0, -7.5);
+	glEnd();
+
+	//wall with entry gap ends here!
+
+
+	//right wall
+	glBegin(GL_POLYGON); 
+	glColor3f(0.65, 0.65, 0.65);
+	glVertex3f(-4.5, 0.0, -10.0);
+	glVertex3f(-10.0, 0.0, -10.0);
+	glVertex3f(-10.0, 5.0, -10.0);
+	glVertex3f(-4.5, 5.0, -10.0);
+	glEnd();
+
+
+	//left wall
+	glBegin(GL_POLYGON);
+	glColor3f(0.65, 0.65, 0.65);
+	glVertex3f(-4.5, 0.0, -6.0);
+	glVertex3f(-10.0, 0.0, -6.0);
+	glVertex3f(-10.0, 5.0, -6.0);
+	glVertex3f(-4.5, 5.0, -6.0);
+	glEnd();
+
+	//bottom wall
+	glBegin(GL_POLYGON); 
+	glColor3f(0.93, 0.93, 0.93);
+	glVertex3f(-4.5, 0.0, -10.0);
+	glVertex3f(-10.0, 0.0, -10.0);
+	glVertex3f(-10.0, 0.0, -6.0);
+	glVertex3f(-4.5, 0.0, -6.0);
+	glEnd();
+
+	//top wall
+	glBegin(GL_POLYGON);
+	//glColor3f(0.89, 0.89, 0.89);
+	glVertex3f(-4.5, 5.0, -10.0);
+	glVertex3f(-10.0, 5.0, -10.0);
+	glVertex3f(-10.0, 5.0, -6.0);
+	glVertex3f(-4.5, 5.0, -6.0);
+	glEnd();
+
+	//facing side wall
+	glBegin(GL_POLYGON);
+	glColor3f(0.7, 0.7, 0.7);
+	glVertex3f(-10.0, 0.0, -6.0);
+	glVertex3f(-10.0, 0.0, -10.0);
+	glVertex3f(-10.0, 5.0, -10.0);
+	glVertex3f(-10.0, 5.0, -6.0);
+	glEnd();
+
+	glPushMatrix();
+	glColor3f(0, 0, 1);
+	glTranslated(-9.5,1.0,-9.4);
+	glutSolidCube(1);
+	glPopMatrix();
+
+	glPushMatrix();
+	glColor3f(0, 0, 1);
+	glTranslated(-5, 0.5, -6.6);
+	glutSolidCube(0.8);
+	glPopMatrix();
 }
