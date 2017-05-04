@@ -33,6 +33,7 @@ void specKeys(int, int, int);						//To handle special keys
 void specKeysUp(int, int, int);						//Special kesy release handler
 void setupTextures();
 void freeTextures();
+void cameraControl1();
 
 /*
  *  External variables declarations to be 
@@ -52,3 +53,4 @@ extern float camY;
 extern float camZ;
 extern GLuint textures[10];
 extern bool specKey[255];
+extern int room;

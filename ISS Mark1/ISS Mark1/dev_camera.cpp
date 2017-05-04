@@ -109,3 +109,15 @@ bool noCollision() {
 		}
 	}
 }
+
+void cameraControl1() {
+	if (camLrRot > 360)
+		camLrRot -= 360;
+	else if (camLrRot < 0)
+		camLrRot += 360;
+
+	transAng = 360 - camUdRot;
+
+	//glRotatef(camLrRot, 0.0, 1.0, 0.0);
+	glRotatef(transAng, 1.0, 0.0, 0.0);
+}

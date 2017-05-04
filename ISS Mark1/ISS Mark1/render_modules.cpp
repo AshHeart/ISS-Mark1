@@ -42,6 +42,8 @@ void renderScn(void)
 
 void drawDestiny()
 {
+	glColor3f(0.65, 0.65, 0.65);
+
 	//Facing wall
 	glBegin(GL_POLYGON); //Left
 		glVertex3f(-4.0, 0.0, -5.0);
@@ -208,8 +210,8 @@ void drawDestiny()
 	glPopMatrix();
 
 	//Right wall
-	glColor3f(0.15, 0.15, 0.15);
-	glPointSize(5.0);
+	glColor3f(1.0, 1.0, 1.0);
+	glLineWidth(2.0);
 	glBegin(GL_LINES);
 		glVertex3f(1.0, 5.0, -3.5);
 		glVertex3f(1.0, 0.0, -3.5);
@@ -503,35 +505,34 @@ void drawColumbus()
 	//Right wall
 	glBegin(GL_POLYGON);
 	glColor3f(0.7, 0.7, 0.7);
-	glVertex3f(-4.5, 0.0, -8.7);
-	glVertex3f(-4.5, 0.0, -10.0);
-	glVertex3f(-4.5, 5.0, -10.0);
-	glVertex3f(-4.5, 5.0, -8.7);
+		glVertex3f(-4.5, 0.0, -8.7);
+		glVertex3f(-4.5, 0.0, -10.0);
+		glVertex3f(-4.5, 5.0, -10.0);
+		glVertex3f(-4.5, 5.0, -8.7);
 	glEnd();
 
 	//left wall
 	glBegin(GL_POLYGON);
-	
-	glVertex3f(-4.5, 0.0, -6.0);
-	glVertex3f(-4.5, 0.0, -7.5);
-	glVertex3f(-4.5, 5.0, -7.5);
-	glVertex3f(-4.5, 5.0, -6.0);
+		glVertex3f(-4.5, 0.0, -6.0);
+		glVertex3f(-4.5, 0.0, -7.5);
+		glVertex3f(-4.5, 5.0, -7.5);
+		glVertex3f(-4.5, 5.0, -6.0);
 	glEnd();
 
 	//top wall
 	glBegin(GL_POLYGON); 
-	glVertex3f(-4.5, 4.0, -8.7);
-	glVertex3f(-4.5, 5.0, -8.7);
-	glVertex3f(-4.5, 5.0, -7.5);
-	glVertex3f(-4.5, 4.0, -7.5);
+		glVertex3f(-4.5, 4.0, -8.7);
+		glVertex3f(-4.5, 5.0, -8.7);
+		glVertex3f(-4.5, 5.0, -7.5);
+		glVertex3f(-4.5, 4.0, -7.5);
 	glEnd();
 
 	//bottom wall
 	glBegin(GL_POLYGON); 
-	glVertex3f(-4.5, 1.0, -8.7);
-	glVertex3f(-4.5, 0.0, -8.7);
-	glVertex3f(-4.5, 0.0, -7.5);
-	glVertex3f(-4.5, 1.0, -7.5);
+		glVertex3f(-4.5, 1.0, -8.7);
+		glVertex3f(-4.5, 0.0, -8.7);
+		glVertex3f(-4.5, 0.0, -7.5);
+		glVertex3f(-4.5, 1.0, -7.5);
 	glEnd();
 
 	//wall with entry gap ends here!
@@ -539,59 +540,100 @@ void drawColumbus()
 
 	//right wall
 	glBegin(GL_POLYGON); 
-	glColor3f(0.65, 0.65, 0.65);
-	glVertex3f(-4.5, 0.0, -10.0);
-	glVertex3f(-10.0, 0.0, -10.0);
-	glVertex3f(-10.0, 5.0, -10.0);
-	glVertex3f(-4.5, 5.0, -10.0);
+		glColor3f(0.65, 0.65, 0.65);
+		glVertex3f(-4.5, 0.0, -10.0);
+		glVertex3f(-10.0, 0.0, -10.0);
+		glVertex3f(-10.0, 5.0, -10.0);
+		glVertex3f(-4.5, 5.0, -10.0);
 	glEnd();
 
 
 	//left wall
 	glBegin(GL_POLYGON);
-	glColor3f(0.65, 0.65, 0.65);
-	glVertex3f(-4.5, 0.0, -6.0);
-	glVertex3f(-10.0, 0.0, -6.0);
-	glVertex3f(-10.0, 5.0, -6.0);
-	glVertex3f(-4.5, 5.0, -6.0);
+		glColor3f(0.65, 0.65, 0.65);
+		glVertex3f(-4.5, 0.0, -6.0);
+		glVertex3f(-10.0, 0.0, -6.0);
+		glVertex3f(-10.0, 5.0, -6.0);
+		glVertex3f(-4.5, 5.0, -6.0);
 	glEnd();
 
 	//bottom wall
 	glBegin(GL_POLYGON); 
-	glColor3f(0.93, 0.93, 0.93);
-	glVertex3f(-4.5, 0.0, -10.0);
-	glVertex3f(-10.0, 0.0, -10.0);
-	glVertex3f(-10.0, 0.0, -6.0);
-	glVertex3f(-4.5, 0.0, -6.0);
+		glColor3f(0.93, 0.93, 0.93);
+		glVertex3f(-4.5, 0.0, -10.0);
+		glVertex3f(-10.0, 0.0, -10.0);
+		glVertex3f(-10.0, 0.0, -6.0);
+		glVertex3f(-4.5, 0.0, -6.0);
 	glEnd();
 
 	//top wall
 	glBegin(GL_POLYGON);
-	//glColor3f(0.89, 0.89, 0.89);
-	glVertex3f(-4.5, 5.0, -10.0);
-	glVertex3f(-10.0, 5.0, -10.0);
-	glVertex3f(-10.0, 5.0, -6.0);
-	glVertex3f(-4.5, 5.0, -6.0);
+		//glColor3f(0.89, 0.89, 0.89);
+		glVertex3f(-4.5, 5.0, -10.0);
+		glVertex3f(-10.0, 5.0, -10.0);
+		glVertex3f(-10.0, 5.0, -6.0);
+		glVertex3f(-4.5, 5.0, -6.0);
 	glEnd();
 
 	//facing side wall
 	glBegin(GL_POLYGON);
-	glColor3f(0.7, 0.7, 0.7);
-	glVertex3f(-10.0, 0.0, -6.0);
-	glVertex3f(-10.0, 0.0, -10.0);
-	glVertex3f(-10.0, 5.0, -10.0);
-	glVertex3f(-10.0, 5.0, -6.0);
+		glColor3f(0.7, 0.7, 0.7);
+		glVertex3f(-10.0, 0.0, -6.0);
+		glVertex3f(-10.0, 0.0, -10.0);
+		glVertex3f(-10.0, 5.0, -10.0);
+		glVertex3f(-10.0, 5.0, -6.0);
 	glEnd();
 
+	/*glBegin(GL_LINES);
+		glColor3f(0.0, 0.0, 1.0);
+		glVertex3f(-10.0, 0.0, -6.0);
+		glVertex3f(-10.0, 5.0, -10.0);
+	glEnd();
+
+	glBegin(GL_LINES);
+		glColor3f(0.0, 0.0, 0.0);
+		glVertex3f(-10.0, 0.0, -6.0);
+		glVertex3f(-10.0, -1.0, -10.0);
+	glEnd();*/
+
 	glPushMatrix();
-	glColor3f(0, 0, 1);
-	glTranslated(-9.5,1.0,-9.4);
-	glutSolidCube(1);
+	glColor3f(0.0, 0.0, 3.0);
+	glTranslatef(-4.1, 3.5, -8.6);
+	glRotatef(90, 1.0, 0.0, 0.0);
+	gluCylinder(pObj, 0.01, 0.01, 1.5, 20, 10);
 	glPopMatrix();
 
 	glPushMatrix();
-	glColor3f(0, 0, 1);
-	glTranslated(-5, 0.5, -6.6);
-	glutSolidCube(0.8);
+	glColor3f(0.0, 0.0, 1.0);
+	glTranslatef(-4.1, 3.5, -7.6);
+	glRotatef(90, 1.0, 0.0, 0.0);
+	gluCylinder(pObj, 0.01, 0.01, 1.5, 20, 10);
+	glPopMatrix();
+
+
+	glPushMatrix();
+		glColor3f(0, 0, 1);
+		glTranslated(-9.5, 0.5, -9.4);
+		glutSolidCube(1);
+	glPopMatrix();
+
+	glPushMatrix();
+		glColor3f(0, 0, 1);
+		glTranslated(-9.5, 0.5, -8.1);
+		glutSolidCube(1);
+	glPopMatrix();
+
+	glPushMatrix();
+		glColor3f(0, 0, 1);
+		glTranslated(-5, 0.5, -6.6);
+		glutSolidCube(0.8);
+	glPopMatrix();
+
+	glPushMatrix();
+		glColor3f(0.25, 0.25, 0.25);
+		glTranslated(-6, 0.5, -10.0);
+		gluCylinder(pObj, 0.5, 0.5, 0.5, 5, 1);
+
+		gluCylinder(pObj, 0.5, 0.0, 0.1, 5, 1);
 	glPopMatrix();
 }

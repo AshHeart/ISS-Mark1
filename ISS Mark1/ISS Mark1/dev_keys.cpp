@@ -13,6 +13,7 @@ GLint view[3] = { 0.0, 0.0, 0.0 };
 GLint axis = 0;
 GLfloat theta[3] = { 0.0, 0.0, 0.0 };
 bool specKey[255];
+int room;
 
 /*
 *  Global keyboard interaction and events handler
@@ -42,6 +43,15 @@ void keyboard(unsigned char key, int x, int y) {
 	if (screen == 4) {
 		if (key == 'i' || key == 'I') {
 			screen = 3;
+			room = 1;
+		}
+		else if (key == 'o' || key == 'O') {
+			screen = 3;
+			room = 2;
+		}
+		else if (key == 'p' || key == 'P') {
+			screen = 3;
+			room = 3;
 		}
 	}
 
